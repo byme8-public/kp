@@ -12,25 +12,18 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using WpfToolkit.Forms.Toolkit.Services;
 using WpfToolkit.Routing.Abstractions;
-using Microsoft.Extensions.DependencyInjection;
 
-namespace kp
+namespace kp.Views
 {
 	/// <summary>
-	/// Interaction logic for MainWindow.xaml
+	/// Interaction logic for Users.xaml
 	/// </summary>
-	public partial class MainWindow : Window
+	public partial class UsersView : UserControl, IView
 	{
-		public MainWindow()
+		public UsersView()
 		{
-			this.InitializeComponent();
-
-			var navigator = Services.ServiceProvider.GetService<INavigator>();
-			this.Content = navigator;
-
-			navigator.Navigate("users");
+			InitializeComponent();
 		}
 	}
 }

@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
+using kp.Business;
+using kp.DataServies.Entities;
+using kp.ViewModels.Core;
+using kp.Views;
+using WpfToolkit.Forms.Toolkit.Services;
+using WpfToolkit.Routing;
 
 namespace kp
 {
@@ -13,5 +13,20 @@ namespace kp
 	/// </summary>
 	public partial class App : Application
 	{
+		protected override void OnStartup(StartupEventArgs e)
+		{
+			base.OnStartup(e);
+
+			Routes.Configure(routes =>
+			{
+				routes.Add<UsersView, EntityListViewModel<User>>("users");
+			});
+
+			Services.Configure(services =>
+			{
+				services.AddRouting();
+				services.AddDataServices();
+			});
+		}
 	}
 }
