@@ -15,6 +15,8 @@ using System.Windows.Shapes;
 using WpfToolkit.Forms.Toolkit.Services;
 using WpfToolkit.Routing.Abstractions;
 using Microsoft.Extensions.DependencyInjection;
+using WpfToolkit.Routing;
+using MaterialDesignThemes.Wpf;
 
 namespace kp
 {
@@ -28,7 +30,11 @@ namespace kp
 			this.InitializeComponent();
 
 			var navigator = Services.ServiceProvider.GetService<INavigator>();
-			this.Content = navigator;
+
+			var grid = new Grid();
+			grid.Children.Add(new NavigationProvider(navigator));
+			grid.Children.Add(new DialogHost());
+			this.Content = grid;
 
 			navigator.Navigate("users");
 		}

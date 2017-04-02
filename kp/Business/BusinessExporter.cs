@@ -14,7 +14,7 @@ namespace kp.Business
 			var host = "http://localhost:5000/api";
 
 			services.AddSingleton(typeof(IEntityFactory<>), typeof(EntityFactory<>));
-			services.AddSingleton(_ => RestService.For<IEntityService<User>>(host + "/users"));
+			services.AddSingleton(_ => RestService.For<IDataService<User>>(host + "/users"));
 		}
 	}
 }

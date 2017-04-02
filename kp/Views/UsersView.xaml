@@ -13,6 +13,11 @@
                   materialDesign:DataGridAssist.ColumnHeaderPadding="8"
                   materialDesign:DataGridAssist.CellPadding="13 8 8 8"
                   ItemsSource="{Binding Entities}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Login" 
+                                EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}" 
+                                Binding="{Binding Login}"/>
+            </DataGrid.Columns>
         </DataGrid>
     </Grid>
 </UserControl>

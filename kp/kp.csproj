@@ -105,11 +105,15 @@
     <Compile Include="Business\Entities\Core\Entity.cs" />
     <Compile Include="Business\Entities\User.cs" />
     <Compile Include="Business\Abstraction\IEntityFactory.cs" />
-    <Compile Include="Business\Abstraction\IEntityService.cs" />
+    <Compile Include="Business\Abstraction\IDataService.cs" />
     <Compile Include="Business\DataServices\IUsersService.cs" />
     <Compile Include="Business\Factories\Core\EntityFactory.cs" />
+    <Compile Include="ViewModels\Core\Abstractions\IEditViewModel.cs" />
     <Compile Include="ViewModels\Core\EntityListViewModel.cs" />
     <Compile Include="ViewModels\Core\ViewModel.cs" />
+    <Compile Include="ViewModels\UsersListViewModel.cs" />
+    <Compile Include="Views\Core\DialogService.cs" />
+    <Compile Include="Views\Core\IDialogService.cs" />
     <Compile Include="Views\UsersView.xaml.cs">
       <DependentUpon>UsersView.xaml</DependentUpon>
     </Compile>
@@ -164,7 +168,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Views\Core\" />
+    <Folder Include="Business\Data\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="FodyWeavers.xml" />

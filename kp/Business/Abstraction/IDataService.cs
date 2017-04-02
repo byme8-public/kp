@@ -7,7 +7,7 @@ using Refit;
 
 namespace kp.Business.Abstraction
 {
-	public interface IEntityService<TEntity>
+	public interface IDataService<TEntity>
 	{
 		[Post("")]
 		Task<TEntity> Add([Body]TEntity entity);

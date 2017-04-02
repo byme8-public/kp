@@ -8,7 +8,7 @@ using kp.DataServies.Entities;
 
 namespace kp.Business.DataServices
 {
-	public interface IUserService : IEntityService<User>
+	public interface IUserService : IDataService<User>
 	{
 	}
 }
