@@ -12,23 +12,20 @@ using kp.DataServies.Entities.Core;
 using kp.ViewModels.Core.Abstractions;
 using kp.Views.Core;
 using ReactiveUI;
+using WpfToolkit.Routing.Abstractions;
 
 namespace kp.ViewModels.Core
 {
 	public abstract class EntityListViewModel<TEntity> : ViewModel
 		where TEntity : Entity
 	{
-		public EntityListViewModel(IDataService<TEntity> service, IDialogService dialogService, IEntityFactory<TEntity> factory)
+		public EntityListViewModel(IDataService<TEntity> service, IDialogService dialogService, INavigator navigator)
 		{
 			this.DataService = service;
 			this.Entities = new ObservableCollection<TEntity>();
 			this.LoadEntitiesAsync();
 
-			this.New = ReactiveCommand.Create(async () =>
-			{
-				var entity = await factory.New();
-				this.Entities.Add(entity);
-			});
+			this.New = ReactiveCommand.Create(() => navigator.Navigate("users/new"));
 
 			this.Edit = ReactiveCommand.Create<TEntity>(async entity =>
 			{
@@ -60,11 +57,6 @@ namespace kp.ViewModels.Core
 			get;
 		}
 
-		public ReactiveCommand<Unit, Task> New
-		{
-			get;
-		}
-
 		public ReactiveCommand<IEnumerable<TEntity>, Unit> Remove
 		{
 			get;
@@ -79,6 +71,7 @@ namespace kp.ViewModels.Core
 		{
 			get;
 		}
+		public ReactiveCommand<Unit, Unit> New { get; private set; }
 
 		private async void LoadEntitiesAsync()
 		{

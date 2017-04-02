@@ -10,10 +10,10 @@ namespace kp.Business.Abstraction
 	public interface IDataService<TEntity>
 	{
 		[Post("")]
-		Task<TEntity> Add([Body]TEntity entity);
+		Task<TEntity> Add(TEntity entity);
 
 		[Put("")]
-		Task<TEntity> Update([Body]TEntity entity);
+		Task<TEntity> Update(TEntity entity);
 
 		[Delete("")]
 		Task Remove(Guid id);

@@ -7,13 +7,14 @@ using kp.Business.Abstraction;
 using kp.DataServies.Entities;
 using kp.ViewModels.Core;
 using kp.Views.Core;
+using WpfToolkit.Routing.Abstractions;
 
 namespace kp.ViewModels
 {
 	public class UsersListViewModel : EntityListViewModel<User>
 	{
-		public UsersListViewModel(IDataService<User> service, IDialogService dialogService, IEntityFactory<User> factory) 
-			: base(service, dialogService, factory)
+		public UsersListViewModel(IDataService<User> service, IDialogService dialogService, INavigator navigator) 
+			: base(service, dialogService, navigator)
 		{
 		}
 

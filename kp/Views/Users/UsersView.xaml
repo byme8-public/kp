@@ -3,6 +3,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:kp.Views"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes">
+    <UserControl.Resources>
+        <ContextMenu x:Key="UserContextMenu">
+            <MenuItem Header="New" Command="{Binding New}"/>
+        </ContextMenu>
+    </UserControl.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -10,6 +15,7 @@
         </Grid.RowDefinitions>
         <DataGrid x:Name="Items" Grid.Row="1" SelectionMode="Extended" SelectionUnit="FullRow"
                   CanUserSortColumns="True" AutoGenerateColumns="False" CanUserAddRows="False" 
+                  ContextMenu="{StaticResource UserContextMenu}"
                   materialDesign:DataGridAssist.ColumnHeaderPadding="8"
                   materialDesign:DataGridAssist.CellPadding="13 8 8 8"
                   ItemsSource="{Binding Entities}">
