@@ -32,7 +32,8 @@ namespace kp
 			{
 				services.AddRouting();
 				services.AddDataServices();
-				services.AddSingleton<IDialogService, DialogService>();
+				services.AddViewModels();
+				services.AddViews();
 			});
 		}
 	}

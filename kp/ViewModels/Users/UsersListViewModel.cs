@@ -13,12 +13,15 @@ namespace kp.ViewModels
 {
 	public class UsersListViewModel : EntityListViewModel<User>
 	{
-		public UsersListViewModel(IDataService<User> service, IDialogService dialogService, INavigator navigator) 
-			: base(service, dialogService, navigator)
+		public UsersListViewModel(IDataService<User> service, INavigator navigator) 
+			: base(service, navigator)
 		{
 		}
 
-		public override string EditDialogName 
+		public override string EntityEditingRoute 
 			=> "users/edit";
+
+		public override string EntityCreationRoute
+			=> "users/new";
 	}
 }

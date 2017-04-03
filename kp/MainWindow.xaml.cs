@@ -29,7 +29,7 @@ namespace kp
 		{
 			this.InitializeComponent();
 
-			var navigator = Services.ServiceProvider.GetService<INavigator>();
+			var navigator = Services.Resolver.Resolve(typeof(INavigator), false) as INavigator;
 
 			var grid = new Grid();
 			grid.Children.Add(new NavigationProvider(navigator));

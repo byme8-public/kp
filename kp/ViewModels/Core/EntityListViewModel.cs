@@ -19,23 +19,15 @@ namespace kp.ViewModels.Core
 	public abstract class EntityListViewModel<TEntity> : ViewModel
 		where TEntity : Entity
 	{
-		public EntityListViewModel(IDataService<TEntity> service, IDialogService dialogService, INavigator navigator)
+		public EntityListViewModel(IDataService<TEntity> service, INavigator navigator)
 		{
 			this.DataService = service;
 			this.Entities = new ObservableCollection<TEntity>();
 			this.LoadEntitiesAsync();
 
-			this.New = ReactiveCommand.Create(() => navigator.Navigate("users/new"));
+			this.New = ReactiveCommand.Create(() => navigator.Navigate(this.EntityCreationRoute));
 
-			this.Edit = ReactiveCommand.Create<TEntity>(async entity =>
-			{
-				var view = dialogService.Resolve(this.EditDialogName);
-				var editViewModel = view.DataContext as IEditViewModel<TEntity>;
-				editViewModel.Entity = entity;
-
-				if(await dialogService.ShowAsync(view))
-					this.LoadEntitiesAsync();
-			});
+			this.Edit = ReactiveCommand.Create<TEntity>(entity => navigator.Navigate(this.EntityEditingRoute, entity));
 
 			this.Remove = ReactiveCommand.Create<IEnumerable<TEntity>>(async entities =>
 			{
@@ -62,7 +54,12 @@ namespace kp.ViewModels.Core
 			get;
 		}
 
-		public abstract string EditDialogName
+		public abstract string EntityEditingRoute
+		{
+			get;
+		}
+
+		public abstract string EntityCreationRoute
 		{
 			get;
 		}

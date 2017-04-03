@@ -101,20 +101,23 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Business\BusinessExporter.cs" />
+    <Compile Include="Business\Abstraction\IEntityEditor.cs" />
+    <Compile Include="Business\RegisterServices.cs" />
     <Compile Include="Business\Entities\Core\Entity.cs" />
     <Compile Include="Business\Entities\User.cs" />
     <Compile Include="Business\Abstraction\IEntityFactory.cs" />
     <Compile Include="Business\Abstraction\IDataService.cs" />
     <Compile Include="Business\DataServices\IUsersService.cs" />
-    <Compile Include="Business\Factories\Core\EntityFactory.cs" />
+    <Compile Include="Business\Factories\UserFactory.cs" />
     <Compile Include="ViewModels\Core\Abstractions\IEditViewModel.cs" />
     <Compile Include="ViewModels\Core\EntityListViewModel.cs" />
     <Compile Include="ViewModels\Core\ViewModel.cs" />
+    <Compile Include="ViewModels\RegisterViewModels.cs" />
     <Compile Include="ViewModels\Users\NewUserViewModel.cs" />
     <Compile Include="ViewModels\Users\UsersListViewModel.cs" />
     <Compile Include="Views\Core\DialogService.cs" />
     <Compile Include="Views\Core\IDialogService.cs" />
+    <Compile Include="Views\RegisterViews.cs" />
     <Compile Include="Views\Users\NewUserView.xaml.cs">
       <DependentUpon>NewUserView.xaml</DependentUpon>
     </Compile>
@@ -177,6 +180,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Business\Data\" />
+    <Folder Include="Business\Factories\Core\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="FodyWeavers.xml" />
