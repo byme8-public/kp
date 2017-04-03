@@ -14,6 +14,7 @@ namespace kp.ViewModels
 		{
 			container.Register<UsersListViewModel>();
 			container.Register<NewUserViewModel>();
+			container.Register<EditUserViewModel>();
 		}
 	}
 }

@@ -14,6 +14,7 @@ namespace kp.Views
 		{
 			container.Register<UsersView>();
 			container.Register<NewUserView>();
+			container.Register<EditUserView>();
 		}
 	}
 }

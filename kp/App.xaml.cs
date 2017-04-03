@@ -26,6 +26,7 @@ namespace kp
 			{
 				routes.Add<UsersView, UsersListViewModel>("users");
 				routes.Add<NewUserView, NewUserViewModel>("users/new");
+				routes.Add<EditUserView, EditUserViewModel>("users/edit");
 			});
 
 			Services.Configure(services =>

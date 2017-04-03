@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ReactiveUI;
 using ReactiveUI.Fody.Helpers;
+using WPFToolkit.Routing.Abstractions;
 
 namespace kp.ViewModels.Core
 {
@@ -12,7 +13,7 @@ namespace kp.ViewModels.Core
 	{
 	}
 
-	public class ViewModel<TValue> : ReactiveObject
+	public class ViewModel<TValue> : ViewModel, IViewModelWithValue<TValue> 
 	{
 		[Reactive]
 		public TValue Value
