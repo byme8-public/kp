@@ -6,6 +6,10 @@
     <UserControl.Resources>
         <ContextMenu x:Key="UserContextMenu">
             <MenuItem Header="New" Command="{Binding New}"/>
+            <MenuItem Header="Remove" 
+                      Command="{Binding Remove}"
+                      CommandParameter="{Binding SelectedItems, Source={x:Reference Items}}"/>
+            <MenuItem Header="Edit" Command="{Binding Edit}"/>
         </ContextMenu>
     </UserControl.Resources>
     <Grid>

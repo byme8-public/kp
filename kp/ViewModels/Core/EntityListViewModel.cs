@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
@@ -29,9 +30,9 @@ namespace kp.ViewModels.Core
 
 			this.Edit = ReactiveCommand.Create<TEntity>(entity => navigator.Navigate(this.EntityEditingRoute, entity));
 
-			this.Remove = ReactiveCommand.Create<IEnumerable<TEntity>>(async entities =>
+			this.Remove = ReactiveCommand.Create<IList>(async entities =>
 			{
-				foreach (var entity in entities)
+				foreach (var entity in entities.Cast<TEntity>().ToArray())
 				{
 					await this.DataService.Remove(entity.Id);
 					this.Entities.Remove(entity);
@@ -49,7 +50,7 @@ namespace kp.ViewModels.Core
 			get;
 		}
 
-		public ReactiveCommand<IEnumerable<TEntity>, Unit> Remove
+		public ReactiveCommand<IList, Unit> Remove
 		{
 			get;
 		}
