@@ -18,7 +18,7 @@ namespace kp.ViewModels.Users
 			this.Create = ReactiveCommand.CreateFromTask(() => userService.Add(new User { Login = this.Login, Password = this.Password }));
 			this.Create.Subscribe(user => dialogService.Close(user));
 
-			this.Cancel = ReactiveCommand.Create(() => navigator.Navigate("users"));
+			this.Cancel = ReactiveCommand.Create(() => dialogService.Close());
 		}
 
 		[Reactive]

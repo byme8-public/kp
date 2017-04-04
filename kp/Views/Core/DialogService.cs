@@ -1,4 +1,6 @@
-﻿using System.Threading.Tasks;
+﻿using System.Reactive;
+using System.Threading.Tasks;
+using kp.Business.Exceptions;
 using MaterialDesignThemes.Wpf;
 using WPFToolkit.Routing.Abstractions;
 
@@ -6,6 +8,11 @@ namespace kp.Views.Core
 {
 	public class DialogService : DialogHost, IDialogService
 	{
+		class DialogCanceled
+		{
+			public static DialogCanceled Default { get; } = new DialogCanceled();
+		}
+
 		public DialogService(IViewResolver viewResolver)
 		{
 			this.ViewResolver = viewResolver;
@@ -18,7 +25,7 @@ namespace kp.Views.Core
 
 		public void Close()
 		{
-			CloseDialogCommand?.Execute(null, this);
+			CloseDialogCommand?.Execute(DialogCanceled.Default, this);
 		}
 
 		public void Close(object result)
@@ -29,14 +36,22 @@ namespace kp.Views.Core
 		public async Task ShowAsync(string dialog)
 		{
 			var view = this.ViewResolver.ResolveView(dialog);
-			await Show(view);
+			var result = await Show(view);
+			if (result is DialogCanceled)
+			{
+				throw new ActionCanceledException("Dialog was canceled.");
+			}
 		}
 
 		public async Task<TResult> ShowAsync<TResult>(string dialog)
 		{
 			var view = this.ViewResolver.ResolveView(dialog);
-			var result = (TResult)await Show(view);
-			return result;
+			var result = await Show(view);
+			if (result is DialogCanceled)
+			{
+				throw new ActionCanceledException("Dialog was canceled.");
+			}
+			return (TResult)result;
 		}
 
 		public async Task<TResult> ShowAsync<TResult>(string dialog, object value)
@@ -47,8 +62,13 @@ namespace kp.Views.Core
 				viewModelWithValue.Value = value;
 			}
 
-			var result = (TResult)await Show(view);
-			return result;
+			var result = await Show(view);
+			if (result is DialogCanceled)
+			{
+				throw new ActionCanceledException("Dialog was canceled.");
+			}
+
+			return (TResult)result;
 		}
 	}
 }

@@ -9,5 +9,10 @@ namespace kp.DataServies.Entities.Core
 			get;
 			set;
 		}
+
+		public bool IsSameEntity(Entity entity)
+		{
+			return entity.Id == this.Id;
+		}
 	}
 }
