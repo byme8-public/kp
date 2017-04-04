@@ -17,6 +17,7 @@ using WpfToolkit.Routing.Abstractions;
 using Microsoft.Extensions.DependencyInjection;
 using WpfToolkit.Routing;
 using MaterialDesignThemes.Wpf;
+using kp.Views.Core;
 
 namespace kp
 {
@@ -29,14 +30,12 @@ namespace kp
 		{
 			this.InitializeComponent();
 
-			var navigator = Services.Resolver.Resolve(typeof(INavigator), false) as INavigator;
-
 			var grid = new Grid();
-			grid.Children.Add(new NavigationProvider(navigator));
-			grid.Children.Add(new DialogHost());
+			grid.Children.Add(Services.Resolver.Resolve(typeof(NavigationProvider), false) as NavigationProvider);
+			grid.Children.Add(Services.Resolver.Resolve(typeof(IDialogService), false) as DialogService);
 			this.Content = grid;
 
-			navigator.Navigate("users");
+			(Services.Resolver.Resolve(typeof(INavigator), false) as INavigator).Navigate("users");
 		}
 	}
 }

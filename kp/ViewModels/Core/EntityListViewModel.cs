@@ -20,13 +20,14 @@ namespace kp.ViewModels.Core
 	public abstract class EntityListViewModel<TEntity> : ViewModel
 		where TEntity : Entity
 	{
-		public EntityListViewModel(IDataService<TEntity> service, INavigator navigator)
+		public EntityListViewModel(IDataService<TEntity> service, INavigator navigator, IDialogService dialogService)
 		{
 			this.DataService = service;
 			this.Entities = new ObservableCollection<TEntity>();
 			this.LoadEntitiesAsync();
 
-			this.New = ReactiveCommand.Create(() => navigator.Navigate(this.EntityCreationRoute));
+			this.New = ReactiveCommand.CreateFromTask(() => dialogService.ShowAsync<TEntity>(this.EntityCreationDialog));
+			this.New.Subscribe(entity => this.Entities.Add(entity));
 
 			this.Edit = ReactiveCommand.Create<TEntity>(entity => navigator.Navigate(this.EntityEditingRoute, entity));
 
@@ -60,7 +61,7 @@ namespace kp.ViewModels.Core
 			get;
 		}
 
-		public abstract string EntityCreationRoute
+		public abstract string EntityCreationDialog
 		{
 			get;
 		}
@@ -69,7 +70,11 @@ namespace kp.ViewModels.Core
 		{
 			get;
 		}
-		public ReactiveCommand<Unit, Unit> New { get; private set; }
+
+		public ReactiveCommand<Unit, TEntity> New
+		{
+			get;
+		}
 
 		private async void LoadEntitiesAsync()
 		{

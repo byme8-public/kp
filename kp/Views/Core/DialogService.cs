@@ -9,7 +9,7 @@ using WPFToolkit.Routing.Abstractions;
 
 namespace kp.Views.Core
 {
-	public class DialogService : IDialogService
+	public class DialogService : DialogHost, IDialogService
 	{
 		public DialogService(IViewResolver viewResolver)
 		{
@@ -21,20 +21,39 @@ namespace kp.Views.Core
 			get;
 		}
 
-		public IView Resolve(string dialogName)
+		public void Close()
 		{
-			return this.ViewResolver.ResolveView(dialogName);
+			CloseDialogCommand?.Execute(null, this);
 		}
 
-		public async Task<bool> ShowAsync(string dialogName)
+		public void Close(object result)
 		{
-			var view = this.Resolve(dialogName);
-			return await this.ShowAsync(view);
+			CloseDialogCommand?.Execute(result, this);
 		}
 
-		public async Task<bool> ShowAsync(IView view)
+		public async Task ShowAsync(string dialog)
 		{
-			return (bool)await DialogHost.Show(view);
+			var view = this.ViewResolver.ResolveView(dialog);
+			await Show(view);
+		}
+
+		public async Task<TResult> ShowAsync<TResult>(string dialog)
+		{
+			var view = this.ViewResolver.ResolveView(dialog);
+			var result = (TResult)await Show(view);
+			return result;
+		}
+
+		public async Task<TResult> ShowAsync<TResult>(string dialog, object value)
+		{
+			var view = this.ViewResolver.ResolveView(dialog);
+			if (view.DataContext is IViewModelWithValue viewModelWithValue)
+			{
+				viewModelWithValue.Value = value;
+			}
+
+			var result = (TResult)await Show(view);
+			return result;
 		}
 	}
 }

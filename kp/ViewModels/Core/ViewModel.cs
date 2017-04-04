@@ -21,5 +21,17 @@ namespace kp.ViewModels.Core
 			get;
 			set;
 		}
+
+		object IViewModelWithValue.Value
+		{
+			get
+			{
+				return this.Value;
+			}
+			set
+			{
+				this.Value = (TValue)value;
+			}
+		}
 	}
 }

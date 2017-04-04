@@ -9,8 +9,11 @@ namespace kp.Views.Core
 {
 	public interface IDialogService
 	{
-		IView Resolve(string dialogName);
-		Task<bool> ShowAsync(string dialogName);
-		Task<bool> ShowAsync(IView view);
+		Task ShowAsync(string dialog);
+		Task<TResult> ShowAsync<TResult>(string dialog);
+		Task<TResult> ShowAsync<TResult>(string dialog, object value);
+
+		void Close();
+		void Close(object result);
 	}
 }
