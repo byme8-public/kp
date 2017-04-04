@@ -1,31 +1,31 @@
 ﻿<UserControl x:Class="kp.Views.Users.NewUserView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-             mc:Ignorable="d" 
+             mc:Ignorable="d"
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid Margin="10">
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <TextBox Grid.Row="0" 
+        <TextBox Grid.Row="0"
                  Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-                 materialDesign:HintAssist.Hint="Login" 
-                 Text="{Binding Login}"/>
-        <TextBox Grid.Row="1" 
+                 materialDesign:HintAssist.Hint="Login"
+                 Text="{Binding Login}" />
+        <TextBox Grid.Row="1"
                  Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                  materialDesign:HintAssist.Hint="Passoword"
-                 Text="{Binding Password}"/>
-        <PasswordBox Grid.Row="2" materialDesign:HintAssist.Hint="Repeated passoword" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"/>
+                 Text="{Binding Password}" />
+        <PasswordBox Grid.Row="2" materialDesign:HintAssist.Hint="Repeated passoword" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" />
 
         <StackPanel Grid.Row="3" VerticalAlignment="Bottom" HorizontalAlignment="Right" Orientation="Horizontal">
-            <Button Margin="5" Content="Create" Command="{Binding Create}" Style="{StaticResource MaterialDesignRaisedAccentButton}"/>
-            <Button Margin="5" Content="Cancel" Command="{Binding Cancel}"/>
+            <Button Margin="5" Content="Create" Command="{Binding Create}" Style="{StaticResource MaterialDesignRaisedAccentButton}" />
+            <Button Margin="5" Content="Cancel" Command="{Binding Cancel}" />
         </StackPanel>
     </Grid>
 </UserControl>

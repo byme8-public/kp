@@ -1,7 +1,6 @@
 ﻿using DryIoc;
 using kp.Business.Abstraction;
 using kp.DataServies.Entities;
-using Microsoft.Extensions.DependencyInjection;
 using Refit;
 
 namespace kp.Business

@@ -1,12 +1,11 @@
 ﻿using System;
-using System.Reactive.Linq;
 using System.Reactive;
+using System.Reactive.Linq;
 using kp.Business.Abstraction;
 using kp.DataServies.Entities;
 using kp.ViewModels.Core;
 using ReactiveUI;
 using WpfToolkit.Routing.Abstractions;
-using ReactiveUI.Fody.Helpers;
 
 namespace kp.ViewModels.Users
 {

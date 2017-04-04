@@ -1,13 +1,9 @@
 ﻿using System.Windows;
 using kp.Business;
-using kp.DataServies.Entities;
 using kp.ViewModels;
-using kp.ViewModels.Core;
 using kp.ViewModels.Users;
 using kp.Views;
-using kp.Views.Core;
 using kp.Views.Users;
-using Microsoft.Extensions.DependencyInjection;
 using WpfToolkit.Forms.Toolkit.Services;
 using WpfToolkit.Routing;
 

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using kp.Business.Abstraction;
+﻿using kp.Business.Abstraction;
 using kp.DataServies.Entities;
 using kp.ViewModels.Core;
 using kp.Views.Core;
@@ -13,12 +8,12 @@ namespace kp.ViewModels
 {
 	public class UsersListViewModel : EntityListViewModel<User>
 	{
-		public UsersListViewModel(IDataService<User> service, INavigator navigator, IDialogService dialogService) 
+		public UsersListViewModel(IDataService<User> service, INavigator navigator, IDialogService dialogService)
 			: base(service, navigator, dialogService)
 		{
 		}
 
-		public override string EntityEditingRoute 
+		public override string EntityEditingRoute
 			=> "users/edit";
 
 		public override string EntityCreationDialog

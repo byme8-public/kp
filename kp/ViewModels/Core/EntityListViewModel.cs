@@ -1,16 +1,11 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Diagnostics;
 using System.Linq;
 using System.Reactive;
 using System.Reactive.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using kp.Business.Abstraction;
 using kp.DataServies.Entities.Core;
-using kp.ViewModels.Core.Abstractions;
 using kp.Views.Core;
 using ReactiveUI;
 using WpfToolkit.Routing.Abstractions;
