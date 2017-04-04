@@ -5,6 +5,7 @@ using System.Linq;
 using System.Reactive;
 using System.Reactive.Linq;
 using kp.Business.Abstraction;
+using kp.Business.Exceptions;
 using kp.DataServies.Entities.Core;
 using kp.Views.Core;
 using ReactiveUI;
@@ -22,9 +23,22 @@ namespace kp.ViewModels.Core
 			this.LoadEntitiesAsync();
 
 			this.New = ReactiveCommand.CreateFromTask(() => dialogService.ShowAsync<TEntity>(this.EntityCreationDialog));
+			this.New.ThrownExceptions.OfType<ActionCanceledException>().Subscribe();
 			this.New.Subscribe(entity => this.Entities.Add(entity));
 
-			this.Edit = ReactiveCommand.Create<TEntity>(entity => navigator.Navigate(this.EntityEditingRoute, entity));
+			this.Edit = ReactiveCommand.CreateFromTask<TEntity, TEntity>(entity => dialogService.ShowAsync<TEntity>(this.EntityEditingRoute, entity));
+			this.Edit.ThrownExceptions.OfType<ActionCanceledException>().Subscribe();
+			this.Edit.Subscribe(entity =>
+			{
+				for (int i = 0; i < this.Entities.Count; i++)
+				{
+					if (this.Entities[i].Id == entity.Id)
+					{
+						this.Entities[i] = entity;
+						return;
+					}
+				}
+			});
 
 			this.Remove = ReactiveCommand.Create<IList>(async entities =>
 			{
@@ -61,19 +75,19 @@ namespace kp.ViewModels.Core
 			get;
 		}
 
-		public ReactiveCommand<TEntity, Unit> Edit
+		public ReactiveCommand<Unit, TEntity> New
 		{
 			get;
 		}
 
-		public ReactiveCommand<Unit, TEntity> New
+		public ReactiveCommand<TEntity, TEntity> Edit
 		{
 			get;
 		}
 
 		private async void LoadEntitiesAsync()
 		{
-			var entities = await this.DataService.Get();
+			var entities = await this.DataService.GetAll();
 
 			this.Entities.Clear();
 			foreach (var entity in entities)

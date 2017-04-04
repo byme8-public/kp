@@ -4,34 +4,36 @@ using System.Reactive.Linq;
 using kp.Business.Abstraction;
 using kp.DataServies.Entities;
 using kp.ViewModels.Core;
+using kp.Views.Core;
 using ReactiveUI;
+using ReactiveUI.Fody.Helpers;
 using WpfToolkit.Routing.Abstractions;
 
 namespace kp.ViewModels.Users
 {
 	public class EditUserViewModel : ViewModel<User>
 	{
-		public EditUserViewModel(IDataService<User> dataService, INavigator navigator)
+		public EditUserViewModel(IDataService<User> dataService, IDialogService dialogService)
 		{
-			this.Apply = ReactiveCommand.CreateFromTask(() => dataService.Update(this.Value));
-			this.Apply.Subscribe(_ => this.GoToUsers(navigator));
+			this.DataService = dataService;
+			this.Apply = ReactiveCommand.CreateFromTask(() => dataService.Update(this.Entity));
+			this.Apply.Subscribe(_ => dialogService.Close(this.Entity));
 
-			this.Cancel = ReactiveCommand.Create(() => this.GoToUsers(navigator));
+			this.Cancel = ReactiveCommand.Create(() => dialogService.Close());
+
+			this.WhenAnyValue(o => o.Entity).
+				Subscribe(_ => this.RaisePropertyChanged(nameof(this.Login)));
 
 			this.WhenAnyValue(o => o.Value).
-				Subscribe(_ => this.RaisePropertyChanged(nameof(this.Login)));
-		}
-
-		private void GoToUsers(INavigator navigator)
-		{
-			navigator.Navigate("users");
+				Where(entity => entity != null).
+				Subscribe(async entity => this.Entity = await dataService.GetById(entity.Id));
 		}
 
 		public string Login
 		{
 			get
 			{
-				return this.Value?.Login;
+				return this.Entity?.Login;
 			}
 			set
 			{
@@ -40,7 +42,7 @@ namespace kp.ViewModels.Users
 					return;
 				}
 
-				this.Value.Login = value;
+				this.Entity.Login = value;
 				this.RaisePropertyChanged();
 			}
 		}
@@ -51,6 +53,18 @@ namespace kp.ViewModels.Users
 		}
 
 		public ReactiveCommand<Unit, Unit> Cancel
+		{
+			get;
+		}
+
+		[Reactive]
+		public User Entity
+		{
+			get;
+			set;
+		}
+
+		public IDataService<User> DataService
 		{
 			get;
 		}

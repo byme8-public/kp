@@ -17,6 +17,9 @@ namespace kp.Business.Abstraction
 		Task Remove(Guid id);
 
 		[Get("")]
-		Task<IEnumerable<TEntity>> Get();
+		Task<IEnumerable<TEntity>> GetAll();
+
+		[Get("/{id}")]
+		Task<TEntity> GetById(Guid id);
 	}
 }
