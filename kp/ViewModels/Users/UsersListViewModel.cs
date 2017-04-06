@@ -6,17 +6,17 @@ using WpfToolkit.Routing.Abstractions;
 
 namespace kp.ViewModels
 {
-	public class UsersListViewModel : EntityListViewModel<User>
+	public class UsersListViewModel : EntitiesViewModel<User>
 	{
-		public UsersListViewModel(IDataService<User> service, INavigator navigator, IDialogService dialogService)
-			: base(service, navigator, dialogService)
+		public UsersListViewModel(IDataService<User> service, IDialogService dialogService)
+			: base(service, dialogService)
 		{
 		}
 
-		public override string EntityEditingRoute
+		public override string EditDialog
 			=> "users/edit";
 
-		public override string EntityCreationDialog
+		public override string CreateDialog
 			=> "users/new";
 	}
 }

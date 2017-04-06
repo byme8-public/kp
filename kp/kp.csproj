@@ -111,14 +111,18 @@
     <Compile Include="Business\DataServices\IUsersService.cs" />
     <Compile Include="Business\Factories\UserFactory.cs" />
     <Compile Include="ViewModels\Core\Abstractions\IEditViewModel.cs" />
-    <Compile Include="ViewModels\Core\EntityListViewModel.cs" />
+    <Compile Include="ViewModels\Core\MenuItemViewModel.cs" />
+    <Compile Include="ViewModels\Core\EntitiesViewModel.cs" />
     <Compile Include="ViewModels\Core\ViewModel.cs" />
     <Compile Include="ViewModels\RegisterViewModels.cs" />
     <Compile Include="ViewModels\Users\EditUserViewModel.cs" />
     <Compile Include="ViewModels\Users\NewUserViewModel.cs" />
     <Compile Include="ViewModels\Users\UsersListViewModel.cs" />
-    <Compile Include="Views\Core\DialogService.cs" />
-    <Compile Include="Views\Core\IDialogService.cs" />
+    <Compile Include="Views\Core\Dialogs\DialogService.cs" />
+    <Compile Include="Views\Core\Dialogs\IDialogService.cs" />
+    <Compile Include="Views\Core\Entities\EntitiesView.xaml.cs">
+      <DependentUpon>EntitiesView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\RegisterViews.cs" />
     <Compile Include="Views\Users\EditUserView.xaml.cs">
       <DependentUpon>EditUserView.xaml</DependentUpon>
@@ -141,6 +145,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\Core\Entities\EntitiesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Users\EditUserView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

@@ -1,5 +1,4 @@
-﻿using System.Reactive;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using kp.Business.Exceptions;
 using MaterialDesignThemes.Wpf;
 using WPFToolkit.Routing.Abstractions;
@@ -8,7 +7,7 @@ namespace kp.Views.Core
 {
 	public class DialogService : DialogHost, IDialogService
 	{
-		class DialogCanceled
+		private class DialogCanceled
 		{
 			public static DialogCanceled Default { get; } = new DialogCanceled();
 		}
