@@ -28,7 +28,13 @@
                 <DataGridTextColumn Header="Login"
                                 EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}"
                                 Binding="{Binding Login}" />
+                <DataGridTextColumn Width="*"/>
             </DataGrid.Columns>
+            <DataGrid.Resources>
+                <Style BasedOn="{StaticResource MaterialDesignDataGridCell}" TargetType="{x:Type DataGridCell}">
+                    <Setter Property="BorderThickness" Value="0" />
+                </Style>
+            </DataGrid.Resources>
         </DataGrid>
     </Grid>
 </UserControl>
