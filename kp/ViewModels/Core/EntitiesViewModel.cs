@@ -7,6 +7,7 @@ using System.Reactive.Linq;
 using kp.Business.Abstraction;
 using kp.Business.Exceptions;
 using kp.DataServies.Entities.Core;
+using kp.Resources;
 using kp.Views.Core;
 using ReactiveUI;
 using ReactiveUI.Fody.Helpers;
@@ -108,9 +109,9 @@ namespace kp.ViewModels.Core
 			});
 
 			return new[] {
-				new MenuItemViewModel("New", newCommand),
-				new MenuItemViewModel("Edit", editCommand),
-				new MenuItemViewModel("Remove", removeCommmand) };
+				new MenuItemViewModel(Texts.New, newCommand),
+				new MenuItemViewModel(Texts.Edit, editCommand),
+				new MenuItemViewModel(Texts.Remove, removeCommmand) };
 		}
 
 		private async void LoadEntitiesAsync()
