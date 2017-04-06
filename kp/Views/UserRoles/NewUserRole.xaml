@@ -1,0 +1,18 @@
+﻿<UserControl x:Class="kp.Views.UserRoles.NewUserRole"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:kp.Views.UserRoles"
+             xmlns:resources="clr-namespace:kp.Resources"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes">
+    <Grid Margin="20"> 
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <TextBox Grid.Row="0" Margin="0 0 0 10" Text="{Binding Name}" materialDesign:HintAssist.Hint="{x:Static resources:Texts.Name}"/>
+        <StackPanel Grid.Row="1" VerticalAlignment="Bottom" HorizontalAlignment="Right" Orientation="Horizontal">
+            <Button Margin="5" Content="{x:Static resources:Texts.Create}" Command="{Binding Create}" Style="{StaticResource MaterialDesignRaisedAccentButton}" />
+            <Button Margin="5" Content="{x:Static resources:Texts.Cancel}" Command="{Binding Cancel}" />
+        </StackPanel>
+    </Grid>
+</UserControl>

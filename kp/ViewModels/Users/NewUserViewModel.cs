@@ -11,14 +11,11 @@ using WpfToolkit.Routing.Abstractions;
 namespace kp.ViewModels.Users
 {
 	//TODO: Add validation
-	public class NewUserViewModel : ViewModel
+	public class NewUserViewModel : NewEntityViewModel<User>
 	{
-		public NewUserViewModel(IDataService<User> userService, INavigator navigator, IDialogService dialogService)
+		public NewUserViewModel(IDataService<User> userService, IDialogService dialogService)
+			: base(userService, dialogService)
 		{
-			this.Create = ReactiveCommand.CreateFromTask(() => userService.Add(new User { Login = this.Login, Password = this.Password }));
-			this.Create.Subscribe(user => dialogService.Close(user));
-
-			this.Cancel = ReactiveCommand.Create(() => dialogService.Close());
 		}
 
 		[Reactive]
@@ -35,14 +32,11 @@ namespace kp.ViewModels.Users
 			set;
 		}
 
-		public ReactiveCommand<Unit, User> Create
-		{
-			get;
-		}
-
-		public ReactiveCommand<Unit, Unit> Cancel
-		{
-			get;
-		}
+		protected override User CreateEntity()
+			=> new User
+			{
+				Login = this.Login,
+				Password = this.Password
+			};
 	}
 }

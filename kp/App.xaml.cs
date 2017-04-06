@@ -1,8 +1,11 @@
-﻿using System.Windows;
+﻿using System.Globalization;
+using System.Windows;
 using kp.Business;
 using kp.ViewModels;
+using kp.ViewModels.UserRoles;
 using kp.ViewModels.Users;
 using kp.Views;
+using kp.Views.UserRoles;
 using kp.Views.Users;
 using WpfToolkit.Forms.Toolkit.Services;
 using WpfToolkit.Routing;
@@ -16,13 +19,16 @@ namespace kp
 	{
 		protected override void OnStartup(StartupEventArgs e)
 		{
-			base.OnStartup(e);
+			CultureInfo.DefaultThreadCurrentUICulture = new CultureInfo("ru-ru");
 
+			base.OnStartup(e);
 			Routes.Configure(routes =>
 			{
-				routes.Add<UsersView, UsersListViewModel>("users");
-				routes.Add<NewUserView, NewUserViewModel>("users/new");
-				routes.Add<EditUserView, EditUserViewModel>("users/edit");
+				routes.Add<UsersView, UsersListViewModel>(kp.Resources.Routes.Users);
+				routes.Add<NewUserView, NewUserViewModel>(kp.Resources.Routes.NewUser);
+				routes.Add<EditUserView, EditUserViewModel>(kp.Resources.Routes.EditUser);
+				routes.Add<UserRolesView, UserRolesViewModel>(kp.Resources.Routes.UserRoles);
+				routes.Add<NewUserRole, NewUserRoleViewModel>(kp.Resources.Routes.NewUserRole);
 			});
 
 			Services.Configure(services =>
