@@ -13,6 +13,7 @@ namespace kp.ViewModels
 			container.Register<EditUserViewModel>();
 			container.Register<UserRolesViewModel>();
 			container.Register<NewUserRoleViewModel>();
-		}
+			container.Register<MainViewModel>();
+        }
 	}
 }

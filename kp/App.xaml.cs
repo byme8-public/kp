@@ -24,6 +24,7 @@ namespace kp
 			base.OnStartup(e);
 			Routes.Configure(routes =>
 			{
+                routes.Add<MainView, MainViewModel>("main");
 				routes.Add<UsersView, UsersListViewModel>(kp.Resources.Routes.Users);
 				routes.Add<NewUserView, NewUserViewModel>(kp.Resources.Routes.NewUser);
 				routes.Add<EditUserView, EditUserViewModel>(kp.Resources.Routes.EditUser);

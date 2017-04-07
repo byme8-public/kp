@@ -135,6 +135,7 @@
     <Compile Include="ViewModels\Core\EntitiesViewModel.cs" />
     <Compile Include="ViewModels\Core\NewEntityViewModel.cs" />
     <Compile Include="ViewModels\Core\ViewModel.cs" />
+    <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\RegisterViewModels.cs" />
     <Compile Include="ViewModels\UserRoles\NewUserRoleViewModel.cs" />
     <Compile Include="ViewModels\UserRoles\UserRolesViewModel.cs" />
@@ -145,6 +146,9 @@
     <Compile Include="Views\Core\Dialogs\IDialogService.cs" />
     <Compile Include="Views\Core\Entities\EntitiesView.xaml.cs">
       <DependentUpon>EntitiesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MainView.xaml.cs">
+      <DependentUpon>MainView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\RegisterViews.cs" />
     <Compile Include="Views\UserRoles\NewUserRole.xaml.cs">
@@ -175,6 +179,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Views\Core\Entities\EntitiesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MainView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -4,12 +4,15 @@
              xmlns:local="clr-namespace:kp.Views.UserRoles"
              xmlns:resources="clr-namespace:kp.Resources"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes">
-    <Grid Margin="20"> 
+    <Grid Margin="10"> 
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <TextBox Grid.Row="0" Margin="0 0 0 10" Text="{Binding Name}" materialDesign:HintAssist.Hint="{x:Static resources:Texts.Name}"/>
+        <TextBox Grid.Row="0" Margin="0 0 0 10" 
+                 Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                  materialDesign:HintAssist.Hint="{x:Static resources:Texts.Name}"
+                 Text="{Binding Name}"/>
         <StackPanel Grid.Row="1" VerticalAlignment="Bottom" HorizontalAlignment="Right" Orientation="Horizontal">
             <Button Margin="5" Content="{x:Static resources:Texts.Create}" Command="{Binding Create}" Style="{StaticResource MaterialDesignRaisedAccentButton}" />
             <Button Margin="5" Content="{x:Static resources:Texts.Cancel}" Command="{Binding Cancel}" />
