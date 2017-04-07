@@ -21,7 +21,7 @@ namespace kp
 			grid.Children.Add(Services.Resolver.Resolve(typeof(IDialogService), false) as DialogService);
 			this.Content = grid;
 
-			(Services.Resolver.Resolve(typeof(INavigator), false) as INavigator).Navigate(kp.Resources.Routes.UserRoles);
+			(Services.Resolver.Resolve(typeof(INavigator), false) as INavigator).Navigate(kp.Resources.Routes.Users);
 		}
 	}
 }
