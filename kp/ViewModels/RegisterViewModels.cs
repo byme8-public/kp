@@ -1,4 +1,5 @@
 ﻿using DryIoc;
+using kp.ViewModels.Login;
 using kp.ViewModels.UserRoles;
 using kp.ViewModels.Users;
 
@@ -9,11 +10,12 @@ namespace kp.ViewModels
 		public static void AddViewModels(this IContainer container)
 		{
 			container.Register<UsersListViewModel>();
-			container.Register<NewUserViewModel>();
+            container.Register<NewUserViewModel>();
 			container.Register<EditUserViewModel>();
 			container.Register<UserRolesViewModel>();
 			container.Register<NewUserRoleViewModel>();
 			container.Register<MainViewModel>();
+			container.Register<LoginViewModel>();
         }
-	}
+    }
 }

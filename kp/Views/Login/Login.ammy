@@ -1,0 +1,34 @@
+﻿using MaterialDesignThemes.Wpf;
+using kp.Resources;
+
+UserControl "kp.Views.Login.Login"
+{
+	Grid 
+	{
+		#ThreeColumns("*", "2*", "*")
+		StackPanel
+		{
+			Grid.Column: 1
+			VerticalAlignment: Center
+			TextBox
+			{
+				Style: resource "MaterialDesignFloatingHintTextBox"
+				HintAssist.Hint: Texts.Login
+				Text: bind Login
+			}
+			TextBox
+			{
+				Style: resource "MaterialDesignFloatingHintTextBox"
+				HintAssist.Hint: Texts.Password
+				Text: bind Password
+			}
+			Button 
+			{
+				HorizontalAlignment: Center
+				Margin: 15
+				Style: resource "MaterialDesignRaisedAccentButton"
+				Content: Texts.SignIn
+			}
+		} 
+	}
+}

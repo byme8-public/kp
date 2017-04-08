@@ -4,6 +4,7 @@ using kp.Views.Core;
 using WpfToolkit.Forms.Toolkit.Services;
 using WpfToolkit.Routing;
 using WpfToolkit.Routing.Abstractions;
+using System.Globalization;
 
 namespace kp
 {
@@ -14,14 +15,16 @@ namespace kp
 	{
 		public MainWindow()
 		{
-			this.InitializeComponent();
+            CultureInfo.CurrentUICulture = new CultureInfo("ru-ru");
+
+            this.InitializeComponent();
 
 			var grid = new Grid();
 			grid.Children.Add(Services.Resolver.Resolve(typeof(NavigationProvider), false) as NavigationProvider);
 			grid.Children.Add(Services.Resolver.Resolve(typeof(IDialogService), false) as DialogService);
 			this.Content = grid;
 
-			(Services.Resolver.Resolve(typeof(INavigator), false) as INavigator).Navigate("main");
+			(Services.Resolver.Resolve(typeof(INavigator), false) as INavigator).Navigate("login");
 		}
 	}
 }

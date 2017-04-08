@@ -37,6 +37,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AmmySidekick, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7c1296d24569a67d, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ammy.WPF.1.2.38\lib\net40\AmmySidekick.dll</HintPath>
+    </Reference>
     <Reference Include="Dragablz, Version=0.0.3.186, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Dragablz.0.0.3.186\lib\net45\Dragablz.dll</HintPath>
     </Reference>
@@ -135,6 +138,7 @@
     <Compile Include="ViewModels\Core\EntitiesViewModel.cs" />
     <Compile Include="ViewModels\Core\NewEntityViewModel.cs" />
     <Compile Include="ViewModels\Core\ViewModel.cs" />
+    <Compile Include="ViewModels\Login\LoginViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\RegisterViewModels.cs" />
     <Compile Include="ViewModels\UserRoles\NewUserRoleViewModel.cs" />
@@ -146,6 +150,9 @@
     <Compile Include="Views\Core\Dialogs\IDialogService.cs" />
     <Compile Include="Views\Core\Entities\EntitiesView.xaml.cs">
       <DependentUpon>EntitiesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Login\Login.ammy.cs">
+      <DependentUpon>Login.ammy</DependentUpon>
     </Compile>
     <Compile Include="Views\MainView.xaml.cs">
       <DependentUpon>MainView.xaml</DependentUpon>
@@ -181,6 +188,11 @@
     <Page Include="Views\Core\Entities\EntitiesView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Login\Login.g.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <DependentUpon>Login.ammy</DependentUpon>
     </Page>
     <Page Include="Views\MainView.xaml">
       <SubType>Designer</SubType>
@@ -233,6 +245,7 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Texts.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="lib.ammy" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -243,6 +256,7 @@
       <LastGenOutput>Texts.ru.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <None Include="Views\Login\Login.ammy" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
@@ -269,7 +283,9 @@
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\refit.3.0.1\build\netstandard1.1\refit.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\refit.3.0.1\build\netstandard1.1\refit.targets'))" />
     <Error Condition="!Exists('..\packages\Fody.1.29.4\build\dotnet\Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Fody.1.29.4\build\dotnet\Fody.targets'))" />
+    <Error Condition="!Exists('..\packages\Ammy.1.2.38\build\Ammy.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Ammy.1.2.38\build\Ammy.targets'))" />
   </Target>
   <Import Project="..\packages\refit.3.0.1\build\netstandard1.1\refit.targets" Condition="Exists('..\packages\refit.3.0.1\build\netstandard1.1\refit.targets')" />
   <Import Project="..\packages\Fody.1.29.4\build\dotnet\Fody.targets" Condition="Exists('..\packages\Fody.1.29.4\build\dotnet\Fody.targets')" />
+  <Import Project="..\packages\Ammy.1.2.38\build\Ammy.targets" Condition="Exists('..\packages\Ammy.1.2.38\build\Ammy.targets')" />
 </Project>

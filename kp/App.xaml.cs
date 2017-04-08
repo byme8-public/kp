@@ -9,6 +9,8 @@ using kp.Views.UserRoles;
 using kp.Views.Users;
 using WpfToolkit.Forms.Toolkit.Services;
 using WpfToolkit.Routing;
+using kp.ViewModels.Login;
+using kp.Views.Login;
 
 namespace kp
 {
@@ -19,13 +21,13 @@ namespace kp
 	{
 		protected override void OnStartup(StartupEventArgs e)
 		{
-			CultureInfo.DefaultThreadCurrentUICulture = new CultureInfo("ru-ru");
 
 			base.OnStartup(e);
 			Routes.Configure(routes =>
 			{
+                routes.Add<Login, LoginViewModel>("login");
                 routes.Add<MainView, MainViewModel>("main");
-				routes.Add<UsersView, UsersListViewModel>(kp.Resources.Routes.Users);
+                routes.Add<UsersView, UsersListViewModel>(kp.Resources.Routes.Users);
 				routes.Add<NewUserView, NewUserViewModel>(kp.Resources.Routes.NewUser);
 				routes.Add<EditUserView, EditUserViewModel>(kp.Resources.Routes.EditUser);
 				routes.Add<UserRolesView, UserRolesViewModel>(kp.Resources.Routes.UserRoles);
