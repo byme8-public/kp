@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
 using kp.Business.Exceptions;
 using MaterialDesignThemes.Wpf;
-using WPFToolkit.Routing.Abstractions;
+using WpfToolkit.Routing.Abstractions;
 
 namespace kp.Views.Core
 {

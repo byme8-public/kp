@@ -108,7 +108,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Business\Abstraction\IAuthorizationService.cs" />
     <Compile Include="Business\Abstraction\IEntityEditor.cs" />
+    <Compile Include="Business\DataServices\ITokenService.cs" />
+    <Compile Include="Business\Data\TokenRequest.cs" />
+    <Compile Include="Business\Entities\Token.cs" />
     <Compile Include="Business\Entities\UserRole.cs" />
     <Compile Include="Business\Exceptions\ActionCanceledException.cs" />
     <Compile Include="Business\RegisterServices.cs" />
@@ -118,6 +122,7 @@
     <Compile Include="Business\Abstraction\IDataService.cs" />
     <Compile Include="Business\DataServices\IUsersService.cs" />
     <Compile Include="Business\Factories\UserFactory.cs" />
+    <Compile Include="Business\Services\AuthorizationService.cs" />
     <Compile Include="Resources\Routes.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -270,7 +275,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Business\Data\" />
     <Folder Include="Business\Factories\Core\" />
   </ItemGroup>
   <ItemGroup>

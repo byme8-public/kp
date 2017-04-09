@@ -3,32 +3,43 @@ using kp.Resources;
 
 UserControl "kp.Views.Login.Login"
 {
-	Grid 
+	ColorZone 
 	{
-		#ThreeColumns("*", "2*", "*")
-		StackPanel
+		VerticalAlignment: Center
+		HorizontalAlignment: Center
+		ShadowAssist.ShadowDepth: Depth5
+		Card 
 		{
-			Grid.Column: 1
-			VerticalAlignment: Center
-			TextBox
+			Padding: 20
+			MinWidth: 200
+			StackPanel
 			{
-				Style: resource "MaterialDesignFloatingHintTextBox"
-				HintAssist.Hint: Texts.Login
-				Text: bind Login
-			}
-			TextBox
-			{
-				Style: resource "MaterialDesignFloatingHintTextBox"
-				HintAssist.Hint: Texts.Password
-				Text: bind Password
-			}
-			Button 
-			{
-				HorizontalAlignment: Center
-				Margin: 15
-				Style: resource "MaterialDesignRaisedAccentButton"
-				Content: Texts.SignIn
-			}
-		} 
+				TextBlock 
+				{
+					FontSize: 16,
+					Text: "Sign In"
+				}
+				TextBox
+				{
+					Style: resource "MaterialDesignFloatingHintTextBox"
+					HintAssist.Hint: Texts.Login
+					Text: bind Login
+				}
+				TextBox
+				{
+					Style: resource "MaterialDesignFloatingHintTextBox"
+					HintAssist.Hint: Texts.Password
+					Text: bind Password
+				}
+				Button 
+				{
+					HorizontalAlignment: Center
+					Margin: 15
+					Style: resource "MaterialDesignRaisedAccentButton"
+					Content: Texts.SignIn
+					Command: bind SignIn
+				}
+			} 
+		}
 	}
 }

@@ -1,10 +1,10 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
 using kp.Views.Core;
-using WpfToolkit.Forms.Toolkit.Services;
 using WpfToolkit.Routing;
 using WpfToolkit.Routing.Abstractions;
 using System.Globalization;
+using WpfToolkit.Services;
 
 namespace kp
 {

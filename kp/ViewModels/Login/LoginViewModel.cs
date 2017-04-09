@@ -1,15 +1,26 @@
-﻿using kp.ViewModels.Core;
+﻿using kp.Business.Abstraction;
+using kp.ViewModels.Core;
+using ReactiveUI;
 using ReactiveUI.Fody.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Reactive;
+using WpfToolkit.Routing.Abstractions;
 
 namespace kp.ViewModels.Login
 {
     public class LoginViewModel : ViewModel
     {
+        public LoginViewModel(IAuthorizationService authorizationService, INavigator navigator)
+        {
+            this.SignIn = ReactiveCommand.CreateFromTask(() => authorizationService.SignInAsync(this.Login, this.Password));
+            this.SignIn.Subscribe(o => navigator.Navigate("main"));
+            //this.SignIn.ThrownExceptions
+        }
+
         [Reactive]
         public string Login
         {
@@ -23,5 +34,11 @@ namespace kp.ViewModels.Login
             get;
             set;
         }
+
+        public IAuthorizationService AuthorizationService
+        {
+            get;
+        }
+        public ReactiveCommand<Unit, Unit> SignIn { get; private set; }
     }
 }

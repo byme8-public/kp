@@ -1,6 +1,6 @@
 ﻿using ReactiveUI;
 using ReactiveUI.Fody.Helpers;
-using WPFToolkit.Routing.Abstractions;
+using WpfToolkit.Routing.Abstractions;
 
 namespace kp.ViewModels.Core
 {

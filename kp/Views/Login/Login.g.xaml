@@ -1,22 +1,24 @@
-<UserControl x:Class="kp.Views.Login.Login" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:ns0="clr-namespace:kp.Resources" xmlns:ns1="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf" xmlns:ns2="clr-namespace:AmmySidekick;assembly=AmmySidekick" ns2:Ammy.Register="/kp;component/Views/Login/Login.g.xaml">
-  <Grid>
-    <Grid.ColumnDefinitions>
-      <ColumnDefinition Width="*"/>
-      <ColumnDefinition Width="2*"/>
-      <ColumnDefinition Width="*"/>
-    </Grid.ColumnDefinitions>
-    <StackPanel Grid.Column="1" VerticalAlignment="Center">
-      <TextBox Style="{StaticResource MaterialDesignFloatingHintTextBox}" ns1:HintAssist.Hint="{x:Static ns0:Texts.Login}">
-        <TextBox.Text>
-          <Binding Path="Login"/>
-        </TextBox.Text>
-      </TextBox>
-      <TextBox Style="{StaticResource MaterialDesignFloatingHintTextBox}" ns1:HintAssist.Hint="{x:Static ns0:Texts.Password}">
-        <TextBox.Text>
-          <Binding Path="Password"/>
-        </TextBox.Text>
-      </TextBox>
-      <Button HorizontalAlignment="Center" Margin="15" Style="{StaticResource MaterialDesignRaisedAccentButton}" Content="{x:Static ns0:Texts.SignIn}"/>
-    </StackPanel>
-  </Grid>
+<UserControl x:Class="kp.Views.Login.Login" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:ns0="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf" xmlns:ns1="clr-namespace:kp.Resources" xmlns:ns2="clr-namespace:AmmySidekick;assembly=AmmySidekick" ns2:Ammy.Register="/kp;component/Views/Login/Login.g.xaml">
+  <ns0:ColorZone VerticalAlignment="Center" HorizontalAlignment="Center" ns0:ShadowAssist.ShadowDepth="Depth5">
+    <ns0:Card Padding="20" MinWidth="200">
+      <StackPanel>
+        <TextBlock FontSize="16" Text="Sign In"/>
+        <TextBox Style="{StaticResource MaterialDesignFloatingHintTextBox}" ns0:HintAssist.Hint="{x:Static ns1:Texts.Login}">
+          <TextBox.Text>
+            <Binding Path="Login"/>
+          </TextBox.Text>
+        </TextBox>
+        <TextBox Style="{StaticResource MaterialDesignFloatingHintTextBox}" ns0:HintAssist.Hint="{x:Static ns1:Texts.Password}">
+          <TextBox.Text>
+            <Binding Path="Password"/>
+          </TextBox.Text>
+        </TextBox>
+        <Button HorizontalAlignment="Center" Margin="15" Style="{StaticResource MaterialDesignRaisedAccentButton}" Content="{x:Static ns1:Texts.SignIn}">
+          <Button.Command>
+            <Binding Path="SignIn"/>
+          </Button.Command>
+        </Button>
+      </StackPanel>
+    </ns0:Card>
+  </ns0:ColorZone>
 </UserControl>
