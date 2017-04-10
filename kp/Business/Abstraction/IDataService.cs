@@ -5,21 +5,21 @@ using Refit;
 
 namespace kp.Business.Abstraction
 {
-	public interface IDataService<TEntity>
-	{
-		[Post("")]
-		Task<TEntity> Add(TEntity entity);
+    public interface IDataService<TEntity>
+    {
+        [Post("")]
+        Task<TEntity> Add(TEntity entity);
 
-		[Put("")]
-		Task<TEntity> Update(TEntity entity);
+        [Put("")]
+        Task<TEntity> Update(TEntity entity);
 
-		[Delete("")]
-		Task Remove(Guid id);
+        [Delete("")]
+        Task Remove(Guid id);
 
-		[Get("")]
-		Task<IEnumerable<TEntity>> GetAll();
+        [Get("")]
+        Task<IEnumerable<TEntity>> GetAll();
 
-		[Get("/{id}")]
-		Task<TEntity> GetById(Guid id);
-	}
+        [Get("/{id}")]
+        Task<TEntity> GetById(Guid id);
+    }
 }

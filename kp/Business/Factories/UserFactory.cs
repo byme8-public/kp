@@ -6,22 +6,22 @@ using WpfToolkit.Routing.Abstractions;
 
 namespace kp.Business.Factories
 {
-	public class UserFactory : IEntityFactory<User>
-	{
-		public UserFactory(INavigator navigator)
-		{
-			this.Navigator = navigator;
-		}
+    public class UserFactory : IEntityFactory<User>
+    {
+        public UserFactory(INavigator navigator)
+        {
+            this.Navigator = navigator;
+        }
 
-		public INavigator Navigator
-		{
-			get;
-		}
+        public INavigator Navigator
+        {
+            get;
+        }
 
-		public Task<User> New()
-		{
-			this.Navigator.Navigate("users/new");
-			throw new NotImplementedException();
-		}
-	}
+        public Task<User> New()
+        {
+            this.Navigator.Navigate("users/new");
+            throw new NotImplementedException();
+        }
+    }
 }

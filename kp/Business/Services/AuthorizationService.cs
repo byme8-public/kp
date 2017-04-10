@@ -1,13 +1,9 @@
-﻿using kp.Business.Abstraction;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using kp.DataServies.Entities;
+﻿using System.Threading.Tasks;
+using kp.Business.Abstraction;
+using kp.Business.Data;
 using kp.Business.DataServices;
 using kp.Business.Entities;
-using kp.Business.Data;
+using kp.DataServies.Entities;
 
 namespace kp.Business.Services
 {

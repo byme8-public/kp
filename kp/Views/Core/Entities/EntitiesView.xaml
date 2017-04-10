@@ -7,11 +7,10 @@
         <ContextMenu x:Key="EntitiesContextMenu" ItemsSource="{Binding MenuItems}">
             <ContextMenu.ItemContainerStyle>
                 <Style BasedOn="{StaticResource MaterialDesignMenuItem}" TargetType="{x:Type MenuItem}">
-                    <Setter Property="Command" Value="{Binding Command}"/>
-                    <Setter Property="Header" Value="{Binding Header}"/>
+                    <Setter Property="Command" Value="{Binding Command}" />
+                    <Setter Property="Header" Value="{Binding Header}" />
                 </Style>
             </ContextMenu.ItemContainerStyle>
-
         </ContextMenu>
     </UserControl.Resources>
     <Grid>
@@ -30,6 +29,6 @@
                     <Setter Property="BorderThickness" Value="0" />
                 </Style>
             </DataGrid.Resources>
-        </DataGrid>      
+        </DataGrid>
     </Grid>
 </UserControl>

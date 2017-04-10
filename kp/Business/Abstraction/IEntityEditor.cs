@@ -3,9 +3,9 @@ using kp.DataServies.Entities.Core;
 
 namespace kp.Business.Abstraction
 {
-	public interface IEntityEditor<TEntity>
-		where TEntity : Entity
-	{
-		Task<TEntity> Edit(TEntity entity);
-	}
+    public interface IEntityEditor<TEntity>
+        where TEntity : Entity
+    {
+        Task<TEntity> Edit(TEntity entity);
+    }
 }

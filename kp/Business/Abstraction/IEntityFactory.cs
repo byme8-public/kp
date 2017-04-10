@@ -2,8 +2,8 @@
 
 namespace kp.Business.Abstraction
 {
-	public interface IEntityFactory<TEntity>
-	{
-		Task<TEntity> New();
-	}
+    public interface IEntityFactory<TEntity>
+    {
+        Task<TEntity> New();
+    }
 }

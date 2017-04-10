@@ -3,12 +3,12 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:resources="clr-namespace:kp.Resources"
              xmlns:entities="clr-namespace:kp.Views.Core.Entities">
-        <entities:EntitiesView>
-            <entities:EntitiesView.Columns>
-                <DataGridTextColumn Header="{x:Static resources:Texts.Login}" IsReadOnly="True"
+    <entities:EntitiesView>
+        <entities:EntitiesView.Columns>
+            <DataGridTextColumn Header="{x:Static resources:Texts.Login}" IsReadOnly="True"
                                 EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}"
                                 Binding="{Binding Login}" />
-                <DataGridTextColumn Width="*" IsReadOnly="True"/>
-            </entities:EntitiesView.Columns>
-        </entities:EntitiesView>
+            <DataGridTextColumn Width="*" IsReadOnly="True" />
+        </entities:EntitiesView.Columns>
+    </entities:EntitiesView>
 </UserControl>

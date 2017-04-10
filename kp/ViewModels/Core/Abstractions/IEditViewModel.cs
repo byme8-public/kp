@@ -2,13 +2,13 @@
 
 namespace kp.ViewModels.Core.Abstractions
 {
-	public interface IEditViewModel<TEntity>
-		where TEntity : Entity
-	{
-		TEntity Entity
-		{
-			get;
-			set;
-		}
-	}
+    public interface IEditViewModel<TEntity>
+        where TEntity : Entity
+    {
+        TEntity Entity
+        {
+            get;
+            set;
+        }
+    }
 }

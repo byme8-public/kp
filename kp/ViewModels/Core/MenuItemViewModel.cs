@@ -2,22 +2,22 @@
 
 namespace kp.ViewModels.Core
 {
-	public class MenuItemViewModel : ViewModel
-	{
-		public MenuItemViewModel(string header, ICommand command)
-		{
-			this.Header = header;
-			this.Command = command;
-		}
+    public class MenuItemViewModel : ViewModel
+    {
+        public MenuItemViewModel(string header, ICommand command)
+        {
+            this.Header = header;
+            this.Command = command;
+        }
 
-		public ICommand Command
-		{
-			get;
-		}
+        public ICommand Command
+        {
+            get;
+        }
 
-		public string Header
-		{
-			get;
-		}
-	}
+        public string Header
+        {
+            get;
+        }
+    }
 }

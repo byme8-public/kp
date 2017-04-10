@@ -1,13 +1,9 @@
-﻿using kp.Business.Abstraction;
+﻿using System;
+using System.Reactive;
+using kp.Business.Abstraction;
 using kp.ViewModels.Core;
 using ReactiveUI;
 using ReactiveUI.Fody.Helpers;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Reactive;
 using WpfToolkit.Routing.Abstractions;
 
 namespace kp.ViewModels.Login
@@ -39,6 +35,7 @@ namespace kp.ViewModels.Login
         {
             get;
         }
+
         public ReactiveCommand<Unit, Unit> SignIn { get; private set; }
     }
 }

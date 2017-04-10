@@ -1,11 +1,9 @@
 ﻿using System.Linq;
 using System.Reflection;
-using DryIoc;
 using kp.Views.Core;
-using kp.Views.Users;
-using WpfToolkit.Routing.Abstractions;
 using MaterialDesignThemes.Wpf;
 using Microsoft.Extensions.DependencyInjection;
+using WpfToolkit.Routing.Abstractions;
 
 namespace kp.Views
 {

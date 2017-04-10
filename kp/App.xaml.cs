@@ -1,27 +1,24 @@
-﻿using System.Globalization;
-using System.Windows;
+﻿using System.Windows;
 using kp.Business;
+using kp.Business.Exceptions;
 using kp.ViewModels;
+using kp.ViewModels.Login;
 using kp.ViewModels.UserRoles;
 using kp.ViewModels.Users;
 using kp.Views;
+using kp.Views.Login;
 using kp.Views.UserRoles;
 using kp.Views.Users;
 using WpfToolkit.Routing;
-using kp.ViewModels.Login;
-using kp.Views.Login;
 using WpfToolkit.Services;
-using Refit;
-using System.Net;
-using kp.Business.Exceptions;
 
 namespace kp
 {
-	/// <summary>
-	/// Interaction logic for App.xaml
-	/// </summary>
-	public partial class App : Application
-	{
+    /// <summary>
+    /// Interaction logic for App.xaml
+    /// </summary>
+    public partial class App : Application
+    {
         public App()
         {
             Routes.Configure(routes =>
@@ -45,5 +42,5 @@ namespace kp
 
             this.DispatcherUnhandledException += ExceptionHander.App_DispatcherUnhandledException;
         }
-	}
+    }
 }

@@ -1,14 +1,9 @@
-﻿using MaterialDesignThemes.Wpf;
+﻿using System.Net;
+using kp.Resources;
+using MaterialDesignThemes.Wpf;
+using Microsoft.Extensions.DependencyInjection;
 using ReactiveUI;
 using Refit;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.Extensions.DependencyInjection;
-using kp.Resources;
 
 namespace kp.Business.Exceptions
 {
@@ -38,6 +33,7 @@ namespace kp.Business.Exceptions
                                 case HttpStatusCode.BadRequest:
                                     Messages.Enqueue(apiException.Content);
                                     return;
+
                                 case HttpStatusCode.InternalServerError:
                                     Messages.Enqueue(Texts.UnexpectedError);
                                     return;

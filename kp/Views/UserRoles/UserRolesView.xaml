@@ -5,9 +5,9 @@
              xmlns:entities="clr-namespace:kp.Views.Core.Entities">
     <entities:EntitiesView>
         <entities:EntitiesView.Columns>
-            <DataGridTextColumn Header="{x:Static resources:Texts.Name}" 
-                                Binding="{Binding Name}" IsReadOnly="True"/>
-            <DataGridTextColumn Width="*"/>
+            <DataGridTextColumn Header="{x:Static resources:Texts.Name}"
+                                Binding="{Binding Name}" IsReadOnly="True" />
+            <DataGridTextColumn Width="*" />
         </entities:EntitiesView.Columns>
     </entities:EntitiesView>
 </UserControl>

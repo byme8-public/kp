@@ -1,15 +1,14 @@
-﻿using DryIoc;
+﻿using System;
+using System.Net.Http;
+using System.Threading;
+using System.Threading.Tasks;
 using kp.Business.Abstraction;
 using kp.Business.DataServices;
 using kp.Business.Entities;
 using kp.Business.Services;
 using kp.DataServies.Entities;
-using Refit;
-using System.Net.Http;
-using System.Threading.Tasks;
-using System;
-using System.Threading;
 using Microsoft.Extensions.DependencyInjection;
+using Refit;
 
 namespace kp.Business
 {
@@ -28,8 +27,7 @@ namespace kp.Business
             services.AddSingleton(RestService.For<IDataService<UserRole>>(host + "/users/roles", refitSettings));
         }
 
-
-        class HttpHandler : HttpClientHandler
+        private class HttpHandler : HttpClientHandler
         {
             public HttpHandler()
             {
@@ -44,7 +42,7 @@ namespace kp.Business
             protected override Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
             {
                 request.Headers.Add("UserToken", this.AuthorizationService.Value.UserToken);
-                
+
                 return base.SendAsync(request, cancellationToken);
             }
         }
