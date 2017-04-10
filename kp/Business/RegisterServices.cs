@@ -9,22 +9,23 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using System;
 using System.Threading;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace kp.Business
 {
     public static class RegisterServices
     {
-        public static void AddDataServices(this IContainer services)
+        public static void AddDataServices(this IServiceCollection services)
         {
             const string host = "http://localhost:5000/api";
             var refitSettings = new RefitSettings
             {
                 HttpMessageHandlerFactory = () => new HttpHandler()
             };
-            services.Register(typeof(ITokenService), made: Made.Of(() => RestService.For<ITokenService>(host + "/tokens")));
-            services.Register<IAuthorizationService, AuthorizationService>(Reuse.Singleton);
-            services.Register(made: Made.Of(() => RestService.For<IDataService<User>>(host + "/users", refitSettings)));
-            services.Register(made: Made.Of(() => RestService.For<IDataService<UserRole>>(host + "/users/roles", refitSettings)));
+            services.AddSingleton(RestService.For<ITokenService>(host + "/tokens"));
+            services.AddSingleton<IAuthorizationService, AuthorizationService>();
+            services.AddSingleton(RestService.For<IDataService<User>>(host + "/users", refitSettings));
+            services.AddSingleton(RestService.For<IDataService<UserRole>>(host + "/users/roles", refitSettings));
         }
 
 
@@ -32,17 +33,17 @@ namespace kp.Business
         {
             public HttpHandler()
             {
-                this.AuthorizationService = WpfToolkit.Services.Services.Resolver.Resolve<IAuthorizationService>();
+                this.AuthorizationService = new Lazy<IAuthorizationService>(() => WpfToolkit.Services.Services.ServiceProvider.GetService<IAuthorizationService>());
             }
 
-            public IAuthorizationService AuthorizationService
+            public Lazy<IAuthorizationService> AuthorizationService
             {
                 get;
             }
 
             protected override Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
             {
-                request.Headers.Add("UserToken", this.AuthorizationService.UserToken);
+                request.Headers.Add("UserToken", this.AuthorizationService.Value.UserToken);
                 
                 return base.SendAsync(request, cancellationToken);
             }

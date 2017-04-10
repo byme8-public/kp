@@ -120,11 +120,11 @@
     <Compile Include="Business\Abstraction\IAuthorizationService.cs" />
     <Compile Include="Business\Abstraction\IEntityEditor.cs" />
     <Compile Include="Business\DataServices\ITokenService.cs" />
-    <Compile Include="Business\Data\Result.cs" />
     <Compile Include="Business\Data\TokenRequest.cs" />
     <Compile Include="Business\Entities\Token.cs" />
     <Compile Include="Business\Entities\UserRole.cs" />
     <Compile Include="Business\Exceptions\ActionCanceledException.cs" />
+    <Compile Include="Business\Exceptions\ExceptionHander.cs" />
     <Compile Include="Business\RegisterServices.cs" />
     <Compile Include="Business\Entities\Core\Entity.cs" />
     <Compile Include="Business\Entities\User.cs" />

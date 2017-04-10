@@ -5,6 +5,8 @@ using WpfToolkit.Routing;
 using WpfToolkit.Routing.Abstractions;
 using System.Globalization;
 using WpfToolkit.Services;
+using MaterialDesignThemes.Wpf;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace kp
 {
@@ -20,11 +22,12 @@ namespace kp
             this.InitializeComponent();
 
 			var grid = new Grid();
-			grid.Children.Add(Services.Resolver.Resolve(typeof(NavigationProvider), false) as NavigationProvider);
-			grid.Children.Add(Services.Resolver.Resolve(typeof(IDialogService), false) as DialogService);
-			this.Content = grid;
+			grid.Children.Add(Services.ServiceProvider.GetService<NavigationProvider>());
+			grid.Children.Add(Services.ServiceProvider.GetService<IDialogService>() as DialogService);
+			grid.Children.Add(Services.ServiceProvider.GetService<Snackbar>());
+            this.Content = grid;
 
-			(Services.Resolver.Resolve(typeof(INavigator), false) as INavigator).Navigate("login");
+			Services.ServiceProvider.GetService<INavigator>().Navigate("login");
 		}
 	}
 }

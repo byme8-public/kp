@@ -144,4 +144,7 @@
   <data name="SignIn" xml:space="preserve">
     <value>Sign In</value>
   </data>
+  <data name="UnexpectedError" xml:space="preserve">
+    <value>Something go wrong...</value>
+  </data>
 </root>

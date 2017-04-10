@@ -140,5 +140,14 @@ namespace kp.Resources {
                 return ResourceManager.GetString("SignIn", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Something go wrong....
+        /// </summary>
+        public static string UnexpectedError {
+            get {
+                return ResourceManager.GetString("UnexpectedError", resourceCulture);
+            }
+        }
     }
 }
