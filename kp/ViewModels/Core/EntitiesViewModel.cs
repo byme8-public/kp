@@ -98,7 +98,7 @@ namespace kp.ViewModels.Core
                 }
             });
 
-            var removeCommmand = ReactiveCommand.Create(async () =>
+            var removeCommmand = ReactiveCommand.CreateFromTask(async () =>
             {
                 foreach (var entity in this.SelectedItems.Cast<TEntity>().ToArray())
                 {

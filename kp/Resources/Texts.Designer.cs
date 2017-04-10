@@ -124,6 +124,15 @@ namespace kp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Problems with connection take place.
+        /// </summary>
+        public static string ProblemWithConnection {
+            get {
+                return ResourceManager.GetString("ProblemWithConnection", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Remove.
         /// </summary>
         public static string Remove {

@@ -138,6 +138,9 @@
   <data name="Password" xml:space="preserve">
     <value>Password</value>
   </data>
+  <data name="ProblemWithConnection" xml:space="preserve">
+    <value>Problems with connection take place</value>
+  </data>
   <data name="Remove" xml:space="preserve">
     <value>Remove</value>
   </data>

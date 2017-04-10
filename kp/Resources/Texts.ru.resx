@@ -138,6 +138,9 @@
   <data name="Password" xml:space="preserve">
     <value>Пароль</value>
   </data>
+  <data name="ProblemWithConnection" xml:space="preserve">
+    <value>Проблемы с интернет соединением</value>
+  </data>
   <data name="Remove" xml:space="preserve">
     <value>Удалить</value>
   </data>

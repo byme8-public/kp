@@ -1,4 +1,5 @@
 ﻿using System.Net;
+using System.Net.Sockets;
 using kp.Resources;
 using MaterialDesignThemes.Wpf;
 using Microsoft.Extensions.DependencyInjection;
@@ -22,24 +23,26 @@ namespace kp.Business.Exceptions
         public static void App_DispatcherUnhandledException(object sender, System.Windows.Threading.DispatcherUnhandledExceptionEventArgs e)
         {
             e.Handled = true;
-            switch (e.Exception)
-            {
-                case UnhandledErrorException unhandledError:
-                    switch (unhandledError.InnerException)
-                    {
-                        case ApiException apiException:
-                            switch (apiException.StatusCode)
-                            {
-                                case HttpStatusCode.BadRequest:
-                                    Messages.Enqueue(apiException.Content);
-                                    return;
+            var exception = e.Exception;
+            while (exception.InnerException != null)
+                exception = exception.InnerException;
 
-                                case HttpStatusCode.InternalServerError:
-                                    Messages.Enqueue(Texts.UnexpectedError);
-                                    return;
-                            }
+            switch (exception)
+            {
+                case ApiException apiException:
+                    switch (apiException.StatusCode)
+                    {
+                        case HttpStatusCode.BadRequest:
+                            Messages.Enqueue(apiException.Content);
+                            return;
+
+                        case HttpStatusCode.InternalServerError:
+                            Messages.Enqueue(Texts.UnexpectedError);
                             return;
                     }
+                    return;
+                case SocketException soketException:
+                    Messages.Enqueue(Texts.ProblemWithConnection);
                     return;
             }
             e.Handled = false;

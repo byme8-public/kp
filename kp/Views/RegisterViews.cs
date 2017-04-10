@@ -13,7 +13,7 @@ namespace kp.Views
         {
             var views = Assembly.GetEntryAssembly().
                                  GetTypes().
-                                 Where(type => type.GetImplementedInterfaces().Contains(typeof(IView)));
+                                 Where(type => type.GetTypeInfo().GetInterfaces().Contains(typeof(IView)));
 
             foreach (var view in views)
                 services.AddScoped(view);
