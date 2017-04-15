@@ -23,6 +23,7 @@ namespace kp.Business
             };
             services.AddSingleton(RestService.For<ITokenService>(host + "/tokens"));
             services.AddSingleton<IAuthorizationService, AuthorizationService>();
+            services.AddSingleton(RestService.For<IUserService>(host + "/users", refitSettings));
             services.AddSingleton(RestService.For<IDataService<User>>(host + "/users", refitSettings));
             services.AddSingleton(RestService.For<IDataService<UserRole>>(host + "/users/roles", refitSettings));
         }

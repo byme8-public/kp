@@ -1,4 +1,6 @@
-﻿using kp.DataServies.Entities.Core;
+﻿using System.Collections.Generic;
+using kp.Business.Entities;
+using kp.DataServies.Entities.Core;
 
 namespace kp.DataServies.Entities
 {
@@ -15,5 +17,11 @@ namespace kp.DataServies.Entities
             get;
             set;
         }
+
+        public List<UserRole> Roles
+        {
+            get;
+            set;
+        } = new List<UserRole>();
     }
 }

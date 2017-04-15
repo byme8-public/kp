@@ -26,7 +26,7 @@ namespace kp
             grid.Children.Add(Services.ServiceProvider.GetService<Snackbar>());
             this.Content = grid;
 
-            Services.ServiceProvider.GetService<INavigator>().Navigate("login");
+            Services.ServiceProvider.GetService<INavigator>().Navigate(kp.Resources.Routes.Login);
         }
     }
 }

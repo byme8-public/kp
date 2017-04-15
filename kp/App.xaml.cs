@@ -23,13 +23,14 @@ namespace kp
         {
             Routes.Configure(routes =>
             {
-                routes.Add<Login, LoginViewModel>("login");
-                routes.Add<MainView, MainViewModel>("main");
+                routes.Add<Login, LoginViewModel>(kp.Resources.Routes.Login);
+                routes.Add<MainView, MainViewModel>(kp.Resources.Routes.Main);
                 routes.Add<UsersView, UsersListViewModel>(kp.Resources.Routes.Users);
                 routes.Add<NewUserView, NewUserViewModel>(kp.Resources.Routes.NewUser);
                 routes.Add<EditUserView, EditUserViewModel>(kp.Resources.Routes.EditUser);
                 routes.Add<UserRolesView, UserRolesViewModel>(kp.Resources.Routes.UserRoles);
                 routes.Add<NewUserRole, NewUserRoleViewModel>(kp.Resources.Routes.NewUserRole);
+                routes.Add<UserRolesManagmentView, UserRolesManagmentViewModel>(kp.Resources.Routes.UserRoleManagement);
             });
 
             Services.Configure(services =>

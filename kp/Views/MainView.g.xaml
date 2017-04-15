@@ -1,0 +1,10 @@
+<UserControl x:Class="kp.Views.MainView" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:ns0="clr-namespace:kp.ViewModels" xmlns:ns1="clr-namespace:WpfToolkit.ViewModels.Injection;assembly=WPFToolkit" xmlns:ns2="clr-namespace:kp.Views" xmlns:ns3="clr-namespace:kp.ViewModels.UserRoles" xmlns:ns4="clr-namespace:kp.Views.UserRoles" xmlns:ns5="clr-namespace:Dragablz;assembly=Dragablz" xmlns:ns6="clr-namespace:AmmySidekick;assembly=AmmySidekick" ns6:Ammy.Register="/kp;component/Views/MainView.g.xaml">
+  <ns5:TabablzControl>
+    <TabItem Header="Users">
+      <ns2:UsersView ns1:Injector.ViewModel="{x:Type ns0:UsersListViewModel}"/>
+    </TabItem>
+    <TabItem Header="Roles">
+      <ns4:UserRolesView ns1:Injector.ViewModel="{x:Type ns3:UserRolesViewModel}"/>
+    </TabItem>
+  </ns5:TabablzControl>
+</UserControl>

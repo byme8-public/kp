@@ -70,6 +70,15 @@ namespace kp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Close.
+        /// </summary>
+        public static string Close {
+            get {
+                return ResourceManager.GetString("Close", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Create.
         /// </summary>
         public static string Create {
@@ -93,6 +102,15 @@ namespace kp.Resources {
         public static string Login {
             get {
                 return ResourceManager.GetString("Login", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Manage user roles.
+        /// </summary>
+        public static string ManageUserRoles {
+            get {
+                return ResourceManager.GetString("ManageUserRoles", resourceCulture);
             }
         }
         

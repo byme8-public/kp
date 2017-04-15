@@ -9,13 +9,14 @@ namespace kp.ViewModels
     {
         public static void AddViewModels(this IServiceCollection servoces)
         {
-            servoces.AddScoped<UsersListViewModel>();
-            servoces.AddScoped<NewUserViewModel>();
-            servoces.AddScoped<EditUserViewModel>();
-            servoces.AddScoped<UserRolesViewModel>();
-            servoces.AddScoped<NewUserRoleViewModel>();
-            servoces.AddScoped<MainViewModel>();
-            servoces.AddScoped<LoginViewModel>();
+            servoces.AddTransient<UsersListViewModel>();
+            servoces.AddTransient<NewUserViewModel>();
+            servoces.AddTransient<EditUserViewModel>();
+            servoces.AddTransient<UserRolesViewModel>();
+            servoces.AddTransient<NewUserRoleViewModel>();
+            servoces.AddTransient<MainViewModel>();
+            servoces.AddTransient<LoginViewModel>();
+            servoces.AddTransient<UserRolesManagmentViewModel>();
         }
     }
 }

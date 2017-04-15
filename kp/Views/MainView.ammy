@@ -1,0 +1,28 @@
+﻿using Dragablz;
+using WpfToolkit.ViewModels.Injection;
+using kp.ViewModels;
+using kp.Views.UserRoles;
+using kp.ViewModels.UserRoles;
+
+UserControl "kp.Views.MainView" 
+{
+    TabablzControl
+	{
+		TabItem
+		{
+			Header: "Users"
+			UsersView 
+			{
+				Injector.ViewModel: UsersListViewModel
+			}
+		}
+		TabItem
+		{
+			Header: "Roles"
+			UserRolesView 
+			{
+				Injector.ViewModel: UserRolesViewModel
+			}
+		}
+	}
+}

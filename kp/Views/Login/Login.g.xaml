@@ -2,20 +2,20 @@
   <ns0:ColorZone VerticalAlignment="Center" HorizontalAlignment="Center" ns0:ShadowAssist.ShadowDepth="Depth5">
     <ns0:Card Padding="20" MinWidth="200">
       <StackPanel>
-        <TextBlock FontSize="16" Text="Sign In" />
+        <TextBlock FontSize="16" Text="Sign In"/>
         <TextBox Style="{StaticResource MaterialDesignFloatingHintTextBox}" ns0:HintAssist.Hint="{x:Static ns1:Texts.Login}">
           <TextBox.Text>
-            <Binding Path="Login" />
+            <Binding Path="Login"/>
           </TextBox.Text>
         </TextBox>
         <TextBox Style="{StaticResource MaterialDesignFloatingHintTextBox}" ns0:HintAssist.Hint="{x:Static ns1:Texts.Password}">
           <TextBox.Text>
-            <Binding Path="Password" />
+            <Binding Path="Password"/>
           </TextBox.Text>
         </TextBox>
         <Button HorizontalAlignment="Center" Margin="15" Style="{StaticResource MaterialDesignRaisedAccentButton}" Content="{x:Static ns1:Texts.SignIn}">
           <Button.Command>
-            <Binding Path="SignIn" />
+            <Binding Path="SignIn"/>
           </Button.Command>
         </Button>
       </StackPanel>

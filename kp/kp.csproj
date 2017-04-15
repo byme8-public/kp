@@ -149,14 +149,17 @@
       <DependentUpon>Texts.ru.resx</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\Core\Abstractions\IEditViewModel.cs" />
+    <Compile Include="ViewModels\Core\DialogViewModel.cs" />
     <Compile Include="ViewModels\Core\MenuItemViewModel.cs" />
     <Compile Include="ViewModels\Core\EntitiesViewModel.cs" />
     <Compile Include="ViewModels\Core\NewEntityViewModel.cs" />
+    <Compile Include="ViewModels\Core\SelectableViewModel.cs" />
     <Compile Include="ViewModels\Core\ViewModel.cs" />
     <Compile Include="ViewModels\Login\LoginViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\RegisterViewModels.cs" />
     <Compile Include="ViewModels\UserRoles\NewUserRoleViewModel.cs" />
+    <Compile Include="ViewModels\UserRoles\UserRolesManagmentViewModel.cs" />
     <Compile Include="ViewModels\UserRoles\UserRolesViewModel.cs" />
     <Compile Include="ViewModels\Users\EditUserViewModel.cs" />
     <Compile Include="ViewModels\Users\NewUserViewModel.cs" />
@@ -169,12 +172,15 @@
     <Compile Include="Views\Login\Login.ammy.cs">
       <DependentUpon>Login.ammy</DependentUpon>
     </Compile>
-    <Compile Include="Views\MainView.xaml.cs">
-      <DependentUpon>MainView.xaml</DependentUpon>
+    <Compile Include="Views\MainView.ammy.cs">
+      <DependentUpon>MainView.ammy</DependentUpon>
     </Compile>
     <Compile Include="Views\RegisterViews.cs" />
     <Compile Include="Views\UserRoles\NewUserRole.xaml.cs">
       <DependentUpon>NewUserRole.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserRoles\UserRolesManagmentView.ammy.cs">
+      <DependentUpon>UserRolesManagmentView.ammy</DependentUpon>
     </Compile>
     <Compile Include="Views\UserRoles\UserRolesView.xaml.cs">
       <DependentUpon>UserRolesView.xaml</DependentUpon>
@@ -209,13 +215,19 @@
       <Generator>MSBuild:Compile</Generator>
       <DependentUpon>Login.ammy</DependentUpon>
     </Page>
-    <Page Include="Views\MainView.xaml">
+    <Page Include="Views\MainView.g.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+      <DependentUpon>MainView.ammy</DependentUpon>
     </Page>
     <Page Include="Views\UserRoles\NewUserRole.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UserRoles\UserRolesManagmentView.g.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <DependentUpon>UserRolesManagmentView.ammy</DependentUpon>
     </Page>
     <Page Include="Views\UserRoles\UserRolesView.xaml">
       <SubType>Designer</SubType>
@@ -272,6 +284,8 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <None Include="Views\Login\Login.ammy" />
+    <None Include="Views\MainView.ammy" />
+    <None Include="Views\UserRoles\UserRolesManagmentView.ammy" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">

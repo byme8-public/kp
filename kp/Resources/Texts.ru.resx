@@ -120,6 +120,9 @@
   <data name="Cancel" xml:space="preserve">
     <value>Отмена</value>
   </data>
+  <data name="Close" xml:space="preserve">
+    <value>Закрыть</value>
+  </data>
   <data name="Create" xml:space="preserve">
     <value>Создать</value>
   </data>
@@ -128,6 +131,9 @@
   </data>
   <data name="Login" xml:space="preserve">
     <value>Логин</value>
+  </data>
+  <data name="ManageUserRoles" xml:space="preserve">
+    <value>Настроить пользовательские роли</value>
   </data>
   <data name="Name" xml:space="preserve">
     <value>Им'я</value>

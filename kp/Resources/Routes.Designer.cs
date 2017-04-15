@@ -70,6 +70,24 @@ namespace kp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to login.
+        /// </summary>
+        internal static string Login {
+            get {
+                return ResourceManager.GetString("Login", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to main.
+        /// </summary>
+        internal static string Main {
+            get {
+                return ResourceManager.GetString("Main", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to users/new.
         /// </summary>
         internal static string NewUser {
@@ -84,6 +102,15 @@ namespace kp.Resources {
         internal static string NewUserRole {
             get {
                 return ResourceManager.GetString("NewUserRole", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to user/roles.
+        /// </summary>
+        internal static string UserRoleManagement {
+            get {
+                return ResourceManager.GetString("UserRoleManagement", resourceCulture);
             }
         }
         

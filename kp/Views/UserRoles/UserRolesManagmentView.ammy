@@ -1,0 +1,54 @@
+﻿using MaterialDesignThemes.Wpf;
+using kp.Resources;
+
+UserControl "kp.Views.UserRoles.UserRolesManagmentView"
+{
+  StackPanel 
+  {
+    Margin: 10
+    Label { Content: Texts.ManageUserRoles }
+    DataGrid
+		
+    {
+      SelectionMode: Single
+      SelectionUnit: FullRow
+      AutoGenerateColumns: false
+      ItemsSource: bind Roles
+      Columns: [
+        DataGridCheckBoxColumn
+				
+        {
+          ElementStyle: resource "MaterialDesignDataGridCheckBoxColumnStyle"
+          Binding: bind IsSelected
+				
+        }
+        MaterialDataGridTextColumn
+        {
+          Header: Texts.Name
+          Binding: bind Value.Name
+				
+        }
+      ]
+      Resources: Style
+      {
+        BasedOn: resource "MaterialDesignDataGridCell"
+        TargetType: DataGridCell
+        Setters: [
+          Setter
+					
+          {
+            Property: "BorderThickness"
+            Value: 0
+          }
+        ]
+      }
+    }
+    Button 
+    {
+      Margin: 10
+      HorizontalAlignment: Right
+      Content: Texts.Close
+      Command: bind Close
+    }
+  }
+}

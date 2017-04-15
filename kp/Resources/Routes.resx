@@ -120,11 +120,20 @@
   <data name="EditUser" xml:space="preserve">
     <value>users/edit</value>
   </data>
+  <data name="Login" xml:space="preserve">
+    <value>login</value>
+  </data>
+  <data name="Main" xml:space="preserve">
+    <value>main</value>
+  </data>
   <data name="NewUser" xml:space="preserve">
     <value>users/new</value>
   </data>
   <data name="NewUserRole" xml:space="preserve">
     <value>userRoles/new</value>
+  </data>
+  <data name="UserRoleManagement" xml:space="preserve">
+    <value>user/roles</value>
   </data>
   <data name="UserRoles" xml:space="preserve">
     <value>usersRoles</value>

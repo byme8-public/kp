@@ -1,0 +1,34 @@
+<UserControl x:Class="kp.Views.UserRoles.UserRolesManagmentView" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:ns0="clr-namespace:kp.Resources" xmlns:ns1="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf" xmlns:ns2="clr-namespace:AmmySidekick;assembly=AmmySidekick" ns2:Ammy.Register="/kp;component/Views/UserRoles/UserRolesManagmentView.g.xaml">
+  <StackPanel Margin="10">
+    <Label Content="{x:Static ns0:Texts.ManageUserRoles}"/>
+    <DataGrid SelectionMode="Single" SelectionUnit="FullRow" AutoGenerateColumns="False">
+      <DataGrid.ItemsSource>
+        <Binding Path="Roles"/>
+      </DataGrid.ItemsSource>
+      <DataGrid.Columns>
+        <DataGridCheckBoxColumn ElementStyle="{StaticResource MaterialDesignDataGridCheckBoxColumnStyle}">
+          <DataGridCheckBoxColumn.Binding>
+            <Binding Path="IsSelected"/>
+          </DataGridCheckBoxColumn.Binding>
+        </DataGridCheckBoxColumn>
+        <ns1:MaterialDataGridTextColumn Header="{x:Static ns0:Texts.Name}">
+          <ns1:MaterialDataGridTextColumn.Binding>
+            <Binding Path="Value.Name"/>
+          </ns1:MaterialDataGridTextColumn.Binding>
+        </ns1:MaterialDataGridTextColumn>
+      </DataGrid.Columns>
+      <DataGrid.Resources>
+        <Style BasedOn="{StaticResource MaterialDesignDataGridCell}" TargetType="{x:Type DataGridCell}">
+          <Style.Setters>
+            <Setter Property="BorderThickness" Value="0"/>
+          </Style.Setters>
+        </Style>
+      </DataGrid.Resources>
+    </DataGrid>
+    <Button Margin="10" HorizontalAlignment="Right" Content="{x:Static ns0:Texts.Close}">
+      <Button.Command>
+        <Binding Path="Close"/>
+      </Button.Command>
+    </Button>
+  </StackPanel>
+</UserControl>
