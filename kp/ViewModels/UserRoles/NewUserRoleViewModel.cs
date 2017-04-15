@@ -1,14 +1,14 @@
 ﻿using kp.Business.Abstraction;
-using kp.Business.Entities;
+using kp.Domain.Data;
 using kp.ViewModels.Core;
 using kp.Views.Core;
 using ReactiveUI.Fody.Helpers;
 
 namespace kp.ViewModels.UserRoles
 {
-    public class NewUserRoleViewModel : NewEntityViewModel<UserRole>
+    public class NewUserRoleViewModel : NewEntityViewModel<Role>
     {
-        public NewUserRoleViewModel(IDataService<UserRole> service, IDialogService dialogService)
+        public NewUserRoleViewModel(IDataService<Role> service, IDialogService dialogService)
             : base(service, dialogService)
         {
         }
@@ -20,8 +20,8 @@ namespace kp.ViewModels.UserRoles
             set;
         }
 
-        protected override UserRole CreateEntity()
-            => new UserRole
+        protected override Role CreateEntity()
+            => new Role
             {
                 Name = this.Name
             };

@@ -4,9 +4,8 @@ using System.Threading;
 using System.Threading.Tasks;
 using kp.Business.Abstraction;
 using kp.Business.DataServices;
-using kp.Business.Entities;
 using kp.Business.Services;
-using kp.DataServies.Entities;
+using kp.Domain.Data;
 using Microsoft.Extensions.DependencyInjection;
 using Refit;
 
@@ -25,7 +24,7 @@ namespace kp.Business
             services.AddSingleton<IAuthorizationService, AuthorizationService>();
             services.AddSingleton(RestService.For<IUserService>(host + "/users", refitSettings));
             services.AddSingleton(RestService.For<IDataService<User>>(host + "/users", refitSettings));
-            services.AddSingleton(RestService.For<IDataService<UserRole>>(host + "/users/roles", refitSettings));
+            services.AddSingleton(RestService.For<IDataService<Role>>(host + "/users/roles", refitSettings));
         }
 
         private class HttpHandler : HttpClientHandler

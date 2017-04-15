@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Reactive;
 using kp.Business.Abstraction;
-using kp.DataServies.Entities.Core;
+using kp.Domain.Data.Core;
 using kp.Views.Core;
 using ReactiveUI;
 
 namespace kp.ViewModels.Core
 {
     public abstract class NewEntityViewModel<TEntity> : ViewModel
-        where TEntity : Entity
+        where TEntity : DomainEntity
     {
         public NewEntityViewModel(IDataService<TEntity> service, IDialogService dialogService)
         {

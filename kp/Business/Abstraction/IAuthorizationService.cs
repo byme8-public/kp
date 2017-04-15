@@ -1,5 +1,5 @@
 ﻿using System.Threading.Tasks;
-using kp.DataServies.Entities;
+using kp.Domain.Data;
 
 namespace kp.Business.Abstraction
 {

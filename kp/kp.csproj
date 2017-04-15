@@ -121,13 +121,9 @@
     <Compile Include="Business\Abstraction\IEntityEditor.cs" />
     <Compile Include="Business\DataServices\ITokenService.cs" />
     <Compile Include="Business\Data\TokenRequest.cs" />
-    <Compile Include="Business\Entities\Token.cs" />
-    <Compile Include="Business\Entities\UserRole.cs" />
     <Compile Include="Business\Exceptions\ActionCanceledException.cs" />
     <Compile Include="Business\Exceptions\ExceptionHander.cs" />
     <Compile Include="Business\RegisterServices.cs" />
-    <Compile Include="Business\Entities\Core\Entity.cs" />
-    <Compile Include="Business\Entities\User.cs" />
     <Compile Include="Business\Abstraction\IEntityFactory.cs" />
     <Compile Include="Business\Abstraction\IDataService.cs" />
     <Compile Include="Business\DataServices\IUsersService.cs" />
@@ -164,6 +160,9 @@
     <Compile Include="ViewModels\Users\EditUserViewModel.cs" />
     <Compile Include="ViewModels\Users\NewUserViewModel.cs" />
     <Compile Include="ViewModels\Users\UsersListViewModel.cs" />
+    <Compile Include="Views\Clients\ClientsView.ammy.cs">
+      <DependentUpon>ClientsView.ammy</DependentUpon>
+    </Compile>
     <Compile Include="Views\Core\Dialogs\DialogService.cs" />
     <Compile Include="Views\Core\Dialogs\IDialogService.cs" />
     <Compile Include="Views\Core\Entities\EntitiesView.xaml.cs">
@@ -206,6 +205,11 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\Clients\ClientsView.g.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <DependentUpon>ClientsView.ammy</DependentUpon>
+    </Page>
     <Page Include="Views\Core\Entities\EntitiesView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -283,6 +287,7 @@
       <LastGenOutput>Texts.ru.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <None Include="Views\Clients\ClientsView.ammy" />
     <None Include="Views\Login\Login.ammy" />
     <None Include="Views\MainView.ammy" />
     <None Include="Views\UserRoles\UserRolesManagmentView.ammy" />
@@ -296,6 +301,10 @@
     <ProjectReference Include="..\..\..\C#\WPFToolkit\WPFToolkit\WPFToolkit.csproj">
       <Project>{2E68B811-C68D-4E87-A671-A03EE6A980B8}</Project>
       <Name>WPFToolkit</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\kp.Web\kp.Domain\kp.Domain.csproj">
+      <Project>{377c3477-15dd-41cd-ab89-42b5c69b18d5}</Project>
+      <Name>kp.Domain</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

@@ -2,7 +2,7 @@
 using System.Reactive;
 using System.Reactive.Linq;
 using kp.Business.Abstraction;
-using kp.DataServies.Entities;
+using kp.Domain.Data;
 using kp.ViewModels.Core;
 using kp.Views.Core;
 using ReactiveUI;

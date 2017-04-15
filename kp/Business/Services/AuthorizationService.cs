@@ -2,8 +2,7 @@
 using kp.Business.Abstraction;
 using kp.Business.Data;
 using kp.Business.DataServices;
-using kp.Business.Entities;
-using kp.DataServies.Entities;
+using kp.Domain.Data;
 
 namespace kp.Business.Services
 {

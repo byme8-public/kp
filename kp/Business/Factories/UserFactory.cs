@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using kp.Business.Abstraction;
-using kp.DataServies.Entities;
+using kp.Domain.Data;
 using WpfToolkit.Routing.Abstractions;
 
 namespace kp.Business.Factories

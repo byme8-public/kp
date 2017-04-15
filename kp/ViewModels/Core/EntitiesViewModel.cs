@@ -5,7 +5,7 @@ using System.Linq;
 using System.Reactive.Linq;
 using kp.Business.Abstraction;
 using kp.Business.Exceptions;
-using kp.DataServies.Entities.Core;
+using kp.Domain.Data.Core;
 using kp.Resources;
 using kp.Views.Core;
 using ReactiveUI;
@@ -29,7 +29,7 @@ namespace kp.ViewModels.Core
     }
 
     public abstract class EntitiesViewModel<TEntity> : EntitiesViewModel
-        where TEntity : Entity
+        where TEntity : DomainEntity
     {
         public EntitiesViewModel(IDataService<TEntity> service, IDialogService dialogService)
         {

@@ -1,9 +1,9 @@
-﻿using kp.DataServies.Entities.Core;
+﻿using kp.Domain.Data.Core;
 
 namespace kp.ViewModels.Core.Abstractions
 {
     public interface IEditViewModel<TEntity>
-        where TEntity : Entity
+        where TEntity : DomainEntity
     {
         TEntity Entity
         {

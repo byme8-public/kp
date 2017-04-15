@@ -1,0 +1,16 @@
+<UserControl x:Class="kp.Views.Clients.ClientsView" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:ns0="clr-namespace:kp.Views.Core.Entities" xmlns:ns1="clr-namespace:AmmySidekick;assembly=AmmySidekick" ns1:Ammy.Register="/kp;component/Views/Clients/ClientsView.g.xaml">
+  <ns0:EntitiesView>
+    <ns0:EntitiesView.Columns>
+      <DataGridTextColumn>
+        <DataGridTextColumn.Binding>
+          <Binding Path="Id"/>
+        </DataGridTextColumn.Binding>
+      </DataGridTextColumn>
+      <DataGridTextColumn>
+        <DataGridTextColumn.Binding>
+          <Binding/>
+        </DataGridTextColumn.Binding>
+      </DataGridTextColumn>
+    </ns0:EntitiesView.Columns>
+  </ns0:EntitiesView>
+</UserControl>

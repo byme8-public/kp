@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using kp.Business.Abstraction;
-using kp.DataServies.Entities;
+using kp.Domain.Data;
 using Refit;
 
 namespace kp.Business.DataServices

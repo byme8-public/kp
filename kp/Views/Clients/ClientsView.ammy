@@ -1,0 +1,19 @@
+﻿using kp.Views.Core.Entities;
+
+UserControl "kp.Views.Clients.ClientsView" 
+{
+	EntitiesView 
+	{
+		Columns: 
+		[
+			DataGridTextColumn
+			{
+				Binding: bind Id
+			}	
+			DataGridTextColumn
+			{
+				Binding: bind 
+			}
+		]
+	}
+}

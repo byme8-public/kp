@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 using kp.Business.Data;
-using kp.Business.Entities;
+using kp.Domain.Data;
 using Refit;
 
 namespace kp.Business.DataServices

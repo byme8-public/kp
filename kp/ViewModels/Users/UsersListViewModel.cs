@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using kp.Business.Abstraction;
-using kp.DataServies.Entities;
+using kp.Domain.Data;
 using kp.Resources;
 using kp.ViewModels.Core;
 using kp.Views.Core;

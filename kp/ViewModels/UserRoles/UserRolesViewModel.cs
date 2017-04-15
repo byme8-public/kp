@@ -2,7 +2,7 @@
 using System.ComponentModel.Composition;
 using System.Linq;
 using kp.Business.Abstraction;
-using kp.Business.Entities;
+using kp.Domain.Data;
 using kp.Resources;
 using kp.ViewModels.Core;
 using kp.Views.Core;
@@ -10,9 +10,9 @@ using kp.Views.Core;
 namespace kp.ViewModels.UserRoles
 {
     [Export(typeof(UserRolesViewModel))]
-    public class UserRolesViewModel : EntitiesViewModel<UserRole>
+    public class UserRolesViewModel : EntitiesViewModel<Role>
     {
-        public UserRolesViewModel(IDataService<UserRole> service, IDialogService dialogService)
+        public UserRolesViewModel(IDataService<Role> service, IDialogService dialogService)
             : base(service, dialogService)
         {
         }
