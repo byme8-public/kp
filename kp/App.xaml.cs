@@ -34,6 +34,8 @@ namespace kp
                 routes.Add<NewUserRole, NewUserRoleViewModel>(kp.Resources.Routes.NewUserRole);
                 routes.Add<UserRolesManagmentView, UserRolesManagmentViewModel>(kp.Resources.Routes.UserRoleManagement);
                 routes.Add<ClientsView, ClientsViewModel>("clients");
+                routes.Add<NewClientView, NewClientViewModel>("client/new");
+                routes.Add<NewClientView, ClientsViewModel>("client/edit");
             });
 
             Services.Configure(services =>

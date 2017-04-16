@@ -129,8 +129,17 @@
   <data name="Edit" xml:space="preserve">
     <value>Редактировать</value>
   </data>
+  <data name="Email" xml:space="preserve">
+    <value>Электроная почта</value>
+  </data>
   <data name="Identificator" xml:space="preserve">
     <value>Идентификатор</value>
+  </data>
+  <data name="InputLoginAndPassword" xml:space="preserve">
+    <value>Введетите логин и пароль</value>
+  </data>
+  <data name="LastName" xml:space="preserve">
+    <value>Фамилия</value>
   </data>
   <data name="Login" xml:space="preserve">
     <value>Логин</value>
@@ -155,6 +164,9 @@
   </data>
   <data name="SignIn" xml:space="preserve">
     <value>Войти</value>
+  </data>
+  <data name="Surname" xml:space="preserve">
+    <value>?Побатькові?</value>
   </data>
   <data name="UnexpectedError" xml:space="preserve">
     <value>Что-то пошло не так...</value>

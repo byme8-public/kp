@@ -1,0 +1,14 @@
+<UserControl x:Class="kp.Views.Core.Buttons.CreateButtons" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:ns0="clr-namespace:kp.Resources" xmlns:ns1="clr-namespace:AmmySidekick;assembly=AmmySidekick" Margin="10" ns1:Ammy.Register="/kp;component/Views/Core/Buttons/CreateButtons.g.xaml">
+  <StackPanel HorizontalAlignment="Right" VerticalAlignment="Bottom" Orientation="Horizontal">
+    <Button Margin="5" Style="{StaticResource MaterialDesignRaisedAccentButton}" Content="{x:Static ns0:Texts.Create}">
+      <Button.Command>
+        <Binding Path="Create"/>
+      </Button.Command>
+    </Button>
+    <Button Margin="5" Content="{x:Static ns0:Texts.Cancel}">
+      <Button.Command>
+        <Binding Path="Cancel"/>
+      </Button.Command>
+    </Button>
+  </StackPanel>
+</UserControl>

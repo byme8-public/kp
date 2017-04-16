@@ -2,7 +2,7 @@
   <ns0:ColorZone VerticalAlignment="Center" HorizontalAlignment="Center" ns0:ShadowAssist.ShadowDepth="Depth5">
     <ns0:Card Padding="20" MinWidth="200">
       <StackPanel>
-        <TextBlock FontSize="16" Text="Sign In"/>
+        <TextBlock FontSize="16" Text="{x:Static ns1:Texts.InputLoginAndPassword}"/>
         <TextBox Style="{StaticResource MaterialDesignFloatingHintTextBox}" ns0:HintAssist.Hint="{x:Static ns1:Texts.Login}">
           <TextBox.Text>
             <Binding Path="Login"/>

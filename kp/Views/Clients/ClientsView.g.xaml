@@ -11,6 +11,11 @@
           <Binding Converter="{x:Static ns1:ExpressionConverter.Instance}" ConverterParameter="&lt;expr id=&quot;0&quot;&gt;&lt;lambda isaction=&quot;False&quot;&gt;&lt;binary op=&quot;Sum&quot;&gt;&lt;binary op=&quot;Sum&quot;&gt;&lt;prop name=&quot;FirstName&quot;&gt;&lt;parameter name=&quot;client&quot; type=&quot;kp.Domain.Data.Client&quot; /&gt;&lt;/prop&gt;&lt;prim val=&quot; &quot; isnull=&quot;False&quot;&gt;&lt;typeinfo typename=&quot;System.String&quot; isarray=&quot;False&quot;&gt;&lt;/typeinfo&gt;&lt;/prim&gt;&lt;/binary&gt;&lt;prop name=&quot;LastName&quot;&gt;&lt;parameter name=&quot;client&quot; type=&quot;kp.Domain.Data.Client&quot; /&gt;&lt;/prop&gt;&lt;/binary&gt;&lt;parameter name=&quot;client&quot; type=&quot;kp.Domain.Data.Client&quot; /&gt;&lt;/lambda&gt;&lt;/expr&gt;"/>
         </DataGridTextColumn.Binding>
       </DataGridTextColumn>
+      <DataGridTextColumn Header="{x:Static ns0:Texts.Email}">
+        <DataGridTextColumn.Binding>
+          <Binding Path="Email"/>
+        </DataGridTextColumn.Binding>
+      </DataGridTextColumn>
     </ns2:EntitiesView.Columns>
   </ns2:EntitiesView>
 </UserControl>

@@ -97,11 +97,38 @@ namespace kp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Email.
+        /// </summary>
+        public static string Email {
+            get {
+                return ResourceManager.GetString("Email", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Identificator.
         /// </summary>
         public static string Identificator {
             get {
                 return ResourceManager.GetString("Identificator", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Input your login and password.
+        /// </summary>
+        public static string InputLoginAndPassword {
+            get {
+                return ResourceManager.GetString("InputLoginAndPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Last name.
+        /// </summary>
+        public static string LastName {
+            get {
+                return ResourceManager.GetString("LastName", resourceCulture);
             }
         }
         
@@ -174,6 +201,15 @@ namespace kp.Resources {
         public static string SignIn {
             get {
                 return ResourceManager.GetString("SignIn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Surname.
+        /// </summary>
+        public static string Surname {
+            get {
+                return ResourceManager.GetString("Surname", resourceCulture);
             }
         }
         

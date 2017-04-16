@@ -19,6 +19,7 @@ namespace kp.ViewModels
             servoces.AddTransient<LoginViewModel>();
             servoces.AddTransient<UserRolesManagmentViewModel>();
             servoces.AddTransient<ClientsViewModel>();
+            servoces.AddTransient<NewClientViewModel>();
         }
     }
 }

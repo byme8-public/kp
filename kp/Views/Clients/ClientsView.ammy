@@ -20,6 +20,11 @@ UserControl "kp.Views.Clients.ClientsView"
 				Binding: bind convert (Client client) => 
 					client.FirstName + " " + client.LastName
 			}
+			DataGridTextColumn
+			{
+				Header: Texts.Email
+				Binding: bind Email
+			}
 		]
 	}
 }

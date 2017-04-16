@@ -17,7 +17,7 @@ UserControl "kp.Views.Login.Login"
 				TextBlock 
 				{
 					FontSize: 16,
-					Text: "Sign In"
+					Text: Texts.InputLoginAndPassword
 				}
 				TextBox
 				{

@@ -1,0 +1,30 @@
+﻿using kp.Resources
+
+UserControl "kp.Views.Core.Buttons.CreateButtons" 
+{
+	mixin PushedButton() for Button
+	{
+		Margin: 5
+	}
+		Margin: 10
+	StackPanel 
+	{
+		HorizontalAlignment: Right
+		VerticalAlignment: Bottom
+		Orientation: Horizontal
+		Button 
+		{
+			#PushedButton()
+			Style: resource "MaterialDesignRaisedAccentButton"
+			Content: Texts.Create
+			Command: bind Create
+		}
+
+		Button 
+		{
+			#PushedButton()
+			Content: Texts.Cancel
+			Command: bind Cancel
+		}
+	}
+}

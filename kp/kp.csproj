@@ -180,6 +180,7 @@
       <DependentUpon>Texts.ru.resx</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\Clients\ClientsViewModel.cs" />
+    <Compile Include="ViewModels\Clients\NewClientViewModel.cs" />
     <Compile Include="ViewModels\Core\Abstractions\IEditViewModel.cs" />
     <Compile Include="ViewModels\Core\DialogViewModel.cs" />
     <Compile Include="ViewModels\Core\MenuItemViewModel.cs" />
@@ -198,6 +199,12 @@
     <Compile Include="ViewModels\Users\UsersListViewModel.cs" />
     <Compile Include="Views\Clients\ClientsView.ammy.cs">
       <DependentUpon>ClientsView.ammy</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Clients\NewClientView.ammy.cs">
+      <DependentUpon>NewClientView.ammy</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Core\Buttons\CreateButtons.ammy.cs">
+      <DependentUpon>CreateButtons.ammy</DependentUpon>
     </Compile>
     <Compile Include="Views\Core\Dialogs\DialogService.cs" />
     <Compile Include="Views\Core\Dialogs\IDialogService.cs" />
@@ -245,6 +252,16 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
       <DependentUpon>ClientsView.ammy</DependentUpon>
+    </Page>
+    <Page Include="Views\Clients\NewClientView.g.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <DependentUpon>NewClientView.ammy</DependentUpon>
+    </Page>
+    <Page Include="Views\Core\Buttons\CreateButtons.g.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <DependentUpon>CreateButtons.ammy</DependentUpon>
     </Page>
     <Page Include="Views\Core\Entities\EntitiesView.xaml">
       <SubType>Designer</SubType>
@@ -326,6 +343,8 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <None Include="Views\Clients\ClientsView.ammy" />
+    <None Include="Views\Clients\NewClientView.ammy" />
+    <None Include="Views\Core\Buttons\CreateButtons.ammy" />
     <None Include="Views\Login\Login.ammy" />
     <None Include="Views\MainView.ammy" />
     <None Include="Views\UserRoles\UserRolesManagmentView.ammy" />
