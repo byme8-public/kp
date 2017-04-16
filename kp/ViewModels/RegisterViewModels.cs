@@ -1,4 +1,5 @@
-﻿using kp.ViewModels.Login;
+﻿using kp.ViewModels.Clients;
+using kp.ViewModels.Login;
 using kp.ViewModels.UserRoles;
 using kp.ViewModels.Users;
 using Microsoft.Extensions.DependencyInjection;
@@ -17,6 +18,7 @@ namespace kp.ViewModels
             servoces.AddTransient<MainViewModel>();
             servoces.AddTransient<LoginViewModel>();
             servoces.AddTransient<UserRolesManagmentViewModel>();
+            servoces.AddTransient<ClientsViewModel>();
         }
     }
 }

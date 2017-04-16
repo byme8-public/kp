@@ -1,4 +1,7 @@
 ﻿using kp.Views.Core.Entities;
+using kp.Domain.Data;
+using kp.Resources;
+using System.Linq;
 
 UserControl "kp.Views.Clients.ClientsView" 
 {
@@ -8,11 +11,14 @@ UserControl "kp.Views.Clients.ClientsView"
 		[
 			DataGridTextColumn
 			{
+				Header: Texts.Identificator
 				Binding: bind Id
 			}	
 			DataGridTextColumn
 			{
-				Binding: bind 
+				Header: Texts.Name
+				Binding: bind convert (Client client) => 
+					client.FirstName + " " + client.LastName
 			}
 		]
 	}

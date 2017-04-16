@@ -3,6 +3,8 @@ using WpfToolkit.ViewModels.Injection;
 using kp.ViewModels;
 using kp.Views.UserRoles;
 using kp.ViewModels.UserRoles;
+using kp.Views.Clients;
+using kp.ViewModels.Clients;
 
 UserControl "kp.Views.MainView" 
 {
@@ -22,6 +24,14 @@ UserControl "kp.Views.MainView"
 			UserRolesView 
 			{
 				Injector.ViewModel: UserRolesViewModel
+			}
+		}
+		TabItem
+		{
+			Header: "Clients"
+			ClientsView 
+			{
+				Injector.ViewModel: ClientsViewModel
 			}
 		}
 	}

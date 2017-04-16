@@ -129,6 +129,9 @@
   <data name="Edit" xml:space="preserve">
     <value>Edit</value>
   </data>
+  <data name="Identificator" xml:space="preserve">
+    <value>Identificator</value>
+  </data>
   <data name="Login" xml:space="preserve">
     <value>Login</value>
   </data>

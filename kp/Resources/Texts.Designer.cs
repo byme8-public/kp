@@ -97,6 +97,15 @@ namespace kp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Identificator.
+        /// </summary>
+        public static string Identificator {
+            get {
+                return ResourceManager.GetString("Identificator", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Login.
         /// </summary>
         public static string Login {

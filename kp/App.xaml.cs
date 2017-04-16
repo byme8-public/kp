@@ -2,10 +2,12 @@
 using kp.Business;
 using kp.Business.Exceptions;
 using kp.ViewModels;
+using kp.ViewModels.Clients;
 using kp.ViewModels.Login;
 using kp.ViewModels.UserRoles;
 using kp.ViewModels.Users;
 using kp.Views;
+using kp.Views.Clients;
 using kp.Views.Login;
 using kp.Views.UserRoles;
 using kp.Views.Users;
@@ -31,6 +33,7 @@ namespace kp
                 routes.Add<UserRolesView, UserRolesViewModel>(kp.Resources.Routes.UserRoles);
                 routes.Add<NewUserRole, NewUserRoleViewModel>(kp.Resources.Routes.NewUserRole);
                 routes.Add<UserRolesManagmentView, UserRolesManagmentViewModel>(kp.Resources.Routes.UserRoleManagement);
+                routes.Add<ClientsView, ClientsViewModel>("clients");
             });
 
             Services.Configure(services =>
