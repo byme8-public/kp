@@ -1,0 +1,11 @@
+﻿using kp.Views.Core.Buttons
+
+UserControl "kp.Views.Clients.EditClientView" 
+{
+	Margin: 10
+	StackPanel 
+	{
+		ClientView { DataContext: bind Entity }
+		ApplyGroup { }
+	}
+}

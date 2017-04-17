@@ -1,6 +1,7 @@
-﻿using kp.Resources
+﻿using MaterialDesignThemes.Wpf
+using kp.Resources
 
-UserControl "kp.Views.Core.Buttons.CreateButtons" 
+UserControl "kp.Views.Core.Buttons.ApplyGroup" 
 {
 	mixin PushedButton() for Button
 	{
@@ -16,8 +17,8 @@ UserControl "kp.Views.Core.Buttons.CreateButtons"
 		{
 			#PushedButton()
 			Style: resource "MaterialDesignRaisedAccentButton"
-			Content: Texts.Create
-			Command: bind Create
+			Content: Texts.Apply
+			Command: bind Apply
 		}
 
 		Button 

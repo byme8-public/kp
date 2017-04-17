@@ -1,0 +1,34 @@
+﻿using MaterialDesignThemes.Wpf;
+using kp.Resources;
+using kp.Views.Core.Buttons;
+
+UserControl "kp.Views.Clients.ClientView" 
+{
+	StackPanel 
+	{
+		TextBox 
+		{
+			Text: bind FirstName
+			Style: resource "MaterialDesignFloatingHintTextBox"
+			HintAssist.Hint: Texts.Name
+		}
+		TextBox 
+		{
+			Text: bind Surname
+			Style: resource "MaterialDesignFloatingHintTextBox"
+			HintAssist.Hint: Texts.Surname
+		}
+		TextBox 
+		{
+			Text: bind LastName
+			Style: resource "MaterialDesignFloatingHintTextBox"
+			HintAssist.Hint: Texts.LastName
+		}
+		TextBox 
+		{
+			Text: bind Email
+			Style: resource "MaterialDesignFloatingHintTextBox"
+			HintAssist.Hint: Texts.Email
+		}
+	}
+}

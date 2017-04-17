@@ -1,0 +1,10 @@
+<UserControl x:Class="kp.Views.Clients.EditClientView" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:ns0="clr-namespace:kp.Views.Clients" xmlns:ns1="clr-namespace:kp.Views.Core.Buttons" xmlns:ns2="clr-namespace:AmmySidekick;assembly=AmmySidekick" Margin="10" ns2:Ammy.Register="/kp;component/Views/Clients/EditClientView.g.xaml">
+  <StackPanel>
+    <ns0:ClientView>
+      <FrameworkElement.DataContext>
+        <Binding Path="Entity"/>
+      </FrameworkElement.DataContext>
+    </ns0:ClientView>
+    <ns1:ApplyGroup/>
+  </StackPanel>
+</UserControl>

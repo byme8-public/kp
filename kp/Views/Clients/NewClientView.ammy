@@ -7,31 +7,7 @@ UserControl "kp.Views.Clients.NewClientView"
 	Margin: 10
 	StackPanel 
 	{
-		TextBox 
-		{
-			Text: bind FirstName
-			Style: resource "MaterialDesignFloatingHintTextBox"
-			HintAssist.Hint: Texts.Name
-		}
-		TextBox 
-		{
-			Text: bind Surname
-			Style: resource "MaterialDesignFloatingHintTextBox"
-			HintAssist.Hint: Texts.Surname
-		}
-		TextBox 
-		{
-			Text: bind LastName
-			Style: resource "MaterialDesignFloatingHintTextBox"
-			HintAssist.Hint: Texts.LastName
-		}
-		TextBox 
-		{
-			Text: bind Email
-			Style: resource "MaterialDesignFloatingHintTextBox"
-			HintAssist.Hint: Texts.Email
-		}
-
+		ClientView {}
 		CreateButtons {}
 	}
 }

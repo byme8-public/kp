@@ -1,0 +1,24 @@
+<UserControl x:Class="kp.Views.Clients.ClientView" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:ns0="clr-namespace:kp.Resources" xmlns:ns1="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf" xmlns:ns2="clr-namespace:AmmySidekick;assembly=AmmySidekick" ns2:Ammy.Register="/kp;component/Views/Clients/ClientView.g.xaml">
+  <StackPanel>
+    <TextBox Style="{StaticResource MaterialDesignFloatingHintTextBox}" ns1:HintAssist.Hint="{x:Static ns0:Texts.Name}">
+      <TextBox.Text>
+        <Binding Path="FirstName"/>
+      </TextBox.Text>
+    </TextBox>
+    <TextBox Style="{StaticResource MaterialDesignFloatingHintTextBox}" ns1:HintAssist.Hint="{x:Static ns0:Texts.Surname}">
+      <TextBox.Text>
+        <Binding Path="Surname"/>
+      </TextBox.Text>
+    </TextBox>
+    <TextBox Style="{StaticResource MaterialDesignFloatingHintTextBox}" ns1:HintAssist.Hint="{x:Static ns0:Texts.LastName}">
+      <TextBox.Text>
+        <Binding Path="LastName"/>
+      </TextBox.Text>
+    </TextBox>
+    <TextBox Style="{StaticResource MaterialDesignFloatingHintTextBox}" ns1:HintAssist.Hint="{x:Static ns0:Texts.Email}">
+      <TextBox.Text>
+        <Binding Path="Email"/>
+      </TextBox.Text>
+    </TextBox>
+  </StackPanel>
+</UserControl>

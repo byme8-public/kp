@@ -1,25 +1,6 @@
-<UserControl x:Class="kp.Views.Clients.NewClientView" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:ns0="clr-namespace:kp.Resources" xmlns:ns1="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf" xmlns:ns2="clr-namespace:kp.Views.Core.Buttons" xmlns:ns3="clr-namespace:AmmySidekick;assembly=AmmySidekick" Margin="10" ns3:Ammy.Register="/kp;component/Views/Clients/NewClientView.g.xaml">
+<UserControl x:Class="kp.Views.Clients.NewClientView" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:ns0="clr-namespace:kp.Views.Clients" xmlns:ns1="clr-namespace:kp.Views.Core.Buttons" xmlns:ns2="clr-namespace:AmmySidekick;assembly=AmmySidekick" Margin="10" ns2:Ammy.Register="/kp;component/Views/Clients/NewClientView.g.xaml">
   <StackPanel>
-    <TextBox Style="{StaticResource MaterialDesignFloatingHintTextBox}" ns1:HintAssist.Hint="{x:Static ns0:Texts.Name}">
-      <TextBox.Text>
-        <Binding Path="FirstName"/>
-      </TextBox.Text>
-    </TextBox>
-    <TextBox Style="{StaticResource MaterialDesignFloatingHintTextBox}" ns1:HintAssist.Hint="{x:Static ns0:Texts.Surname}">
-      <TextBox.Text>
-        <Binding Path="Surname"/>
-      </TextBox.Text>
-    </TextBox>
-    <TextBox Style="{StaticResource MaterialDesignFloatingHintTextBox}" ns1:HintAssist.Hint="{x:Static ns0:Texts.LastName}">
-      <TextBox.Text>
-        <Binding Path="LastName"/>
-      </TextBox.Text>
-    </TextBox>
-    <TextBox Style="{StaticResource MaterialDesignFloatingHintTextBox}" ns1:HintAssist.Hint="{x:Static ns0:Texts.Email}">
-      <TextBox.Text>
-        <Binding Path="Email"/>
-      </TextBox.Text>
-    </TextBox>
-    <ns2:CreateButtons/>
+    <ns0:ClientView/>
+    <ns1:CreateButtons/>
   </StackPanel>
 </UserControl>
