@@ -1,0 +1,18 @@
+﻿using kp.Resources
+using kp.Views.Core.Buttons
+using MaterialDesignThemes.Wpf
+
+UserControl "kp.Views.PaymentKinds.EditPaymentKindView" 
+{
+	Margin: 10
+	StackPanel 
+	{
+		TextBox 
+		{
+			Style: resource "MaterialDesignFloatingHintTextBox"
+			HintAssist.Hint: Texts.Name
+			Text: bind Entity.Name
+		}
+		ApplyGroup { }
+	}
+}

@@ -1,0 +1,10 @@
+<UserControl x:Class="kp.Views.PaymentKinds.NewPaymentKindView" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:ns0="clr-namespace:kp.Resources" xmlns:ns1="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf" xmlns:ns2="clr-namespace:kp.Views.Core.Buttons" xmlns:ns3="clr-namespace:AmmySidekick;assembly=AmmySidekick" Margin="10" ns3:Ammy.Register="/kp;component/Views/PaymentKinds/NewPaymentKindView.g.xaml">
+  <StackPanel>
+    <TextBox Style="{StaticResource MaterialDesignFloatingHintTextBox}" ns1:HintAssist.Hint="{x:Static ns0:Texts.Name}">
+      <TextBox.Text>
+        <Binding Path="Name"/>
+      </TextBox.Text>
+    </TextBox>
+    <ns2:CreateButtons/>
+  </StackPanel>
+</UserControl>

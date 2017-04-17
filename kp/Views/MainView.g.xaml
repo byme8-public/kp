@@ -1,5 +1,5 @@
-<UserControl x:Class="kp.Views.MainView" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:ns0="clr-namespace:kp.ViewModels" xmlns:ns1="clr-namespace:WpfToolkit.ViewModels.Injection;assembly=WPFToolkit" xmlns:ns2="clr-namespace:kp.Views" xmlns:ns3="clr-namespace:kp.ViewModels.UserRoles" xmlns:ns4="clr-namespace:kp.Views.UserRoles" xmlns:ns5="clr-namespace:kp.ViewModels.Clients" xmlns:ns6="clr-namespace:kp.Views.Clients" xmlns:ns7="clr-namespace:Dragablz;assembly=Dragablz" xmlns:ns8="clr-namespace:AmmySidekick;assembly=AmmySidekick" ns8:Ammy.Register="/kp;component/Views/MainView.g.xaml">
-  <ns7:TabablzControl>
+<UserControl x:Class="kp.Views.MainView" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:ns0="clr-namespace:kp.ViewModels" xmlns:ns1="clr-namespace:WpfToolkit.ViewModels.Injection;assembly=WPFToolkit" xmlns:ns2="clr-namespace:kp.Views" xmlns:ns3="clr-namespace:kp.ViewModels.UserRoles" xmlns:ns4="clr-namespace:kp.Views.UserRoles" xmlns:ns5="clr-namespace:kp.ViewModels.Clients" xmlns:ns6="clr-namespace:kp.Views.Clients" xmlns:ns7="clr-namespace:kp.ViewModels.PaymentsKinds" xmlns:ns8="clr-namespace:kp.Views.PaymentKinds" xmlns:ns9="clr-namespace:Dragablz;assembly=Dragablz" xmlns:ns10="clr-namespace:AmmySidekick;assembly=AmmySidekick" ns10:Ammy.Register="/kp;component/Views/MainView.g.xaml">
+  <ns9:TabablzControl>
     <TabItem Header="Users">
       <ns2:UsersView ns1:Injector.ViewModel="{x:Type ns0:UsersListViewModel}"/>
     </TabItem>
@@ -9,5 +9,8 @@
     <TabItem Header="Clients">
       <ns6:ClientsView ns1:Injector.ViewModel="{x:Type ns5:ClientsViewModel}"/>
     </TabItem>
-  </ns7:TabablzControl>
+    <TabItem Header="Payment kinds">
+      <ns8:PaymentKindsView ns1:Injector.ViewModel="{x:Type ns7:PaymentsKindViewModel}"/>
+    </TabItem>
+  </ns9:TabablzControl>
 </UserControl>

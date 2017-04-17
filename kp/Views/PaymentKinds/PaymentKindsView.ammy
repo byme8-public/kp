@@ -1,0 +1,17 @@
+﻿using kp.Views.Core.Entities
+using kp.Resources
+
+UserControl "kp.Views.PaymentKinds.PaymentKindsView" 
+{
+	EntitiesView 
+	{
+		Columns: 
+		[
+			DataGridTextColumn
+			{
+				Header: Texts.Name
+				Binding: bind Name
+			}
+		]
+	}
+}

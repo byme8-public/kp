@@ -5,6 +5,8 @@ using kp.Views.UserRoles;
 using kp.ViewModels.UserRoles;
 using kp.Views.Clients;
 using kp.ViewModels.Clients;
+using kp.Views.PaymentKinds;
+using kp.ViewModels.PaymentsKinds;
 
 UserControl "kp.Views.MainView" 
 {
@@ -32,6 +34,14 @@ UserControl "kp.Views.MainView"
 			ClientsView 
 			{
 				Injector.ViewModel: ClientsViewModel
+			}
+		}
+		TabItem
+		{
+			Header: "Payment kinds"
+			PaymentKindsView 
+			{
+				Injector.ViewModel: PaymentsKindViewModel
 			}
 		}
 	}

@@ -180,9 +180,11 @@
       <DependentUpon>Texts.ru.resx</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\Clients\ClientsViewModel.cs" />
+    <Compile Include="ViewModels\Clients\EditClientViewModel.cs" />
     <Compile Include="ViewModels\Clients\NewClientViewModel.cs" />
     <Compile Include="ViewModels\Core\Abstractions\IEditViewModel.cs" />
     <Compile Include="ViewModels\Core\DialogViewModel.cs" />
+    <Compile Include="ViewModels\Core\EditEntityViewModel.cs" />
     <Compile Include="ViewModels\Core\MenuItemViewModel.cs" />
     <Compile Include="ViewModels\Core\EntitiesViewModel.cs" />
     <Compile Include="ViewModels\Core\NewEntityViewModel.cs" />
@@ -190,6 +192,9 @@
     <Compile Include="ViewModels\Core\ViewModel.cs" />
     <Compile Include="ViewModels\Login\LoginViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
+    <Compile Include="ViewModels\PaymentsKinds\EditPaymentKindViewModel.cs" />
+    <Compile Include="ViewModels\PaymentsKinds\NewPaymentKindViewModel.cs" />
+    <Compile Include="ViewModels\PaymentsKinds\PaymentsKindViewModel.cs" />
     <Compile Include="ViewModels\RegisterViewModels.cs" />
     <Compile Include="ViewModels\UserRoles\NewUserRoleViewModel.cs" />
     <Compile Include="ViewModels\UserRoles\UserRolesManagmentViewModel.cs" />
@@ -200,8 +205,17 @@
     <Compile Include="Views\Clients\ClientsView.ammy.cs">
       <DependentUpon>ClientsView.ammy</DependentUpon>
     </Compile>
+    <Compile Include="Views\Clients\ClientView.ammy.cs">
+      <DependentUpon>ClientView.ammy</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Clients\EditClientView.ammy.cs">
+      <DependentUpon>EditClientView.ammy</DependentUpon>
+    </Compile>
     <Compile Include="Views\Clients\NewClientView.ammy.cs">
       <DependentUpon>NewClientView.ammy</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Core\Buttons\ApplyGroup.ammy.cs">
+      <DependentUpon>ApplyGroup.ammy</DependentUpon>
     </Compile>
     <Compile Include="Views\Core\Buttons\CreateButtons.ammy.cs">
       <DependentUpon>CreateButtons.ammy</DependentUpon>
@@ -216,6 +230,15 @@
     </Compile>
     <Compile Include="Views\MainView.ammy.cs">
       <DependentUpon>MainView.ammy</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PaymentKinds\EditPaymentKindView.ammy.cs">
+      <DependentUpon>EditPaymentKindView.ammy</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PaymentKinds\NewPaymentKindView.ammy.cs">
+      <DependentUpon>NewPaymentKindView.ammy</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PaymentKinds\PaymentKindsView.ammy.cs">
+      <DependentUpon>PaymentKindsView.ammy</DependentUpon>
     </Compile>
     <Compile Include="Views\RegisterViews.cs" />
     <Compile Include="Views\UserRoles\NewUserRole.xaml.cs">
@@ -253,10 +276,25 @@
       <Generator>MSBuild:Compile</Generator>
       <DependentUpon>ClientsView.ammy</DependentUpon>
     </Page>
+    <Page Include="Views\Clients\ClientView.g.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <DependentUpon>ClientView.ammy</DependentUpon>
+    </Page>
+    <Page Include="Views\Clients\EditClientView.g.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <DependentUpon>EditClientView.ammy</DependentUpon>
+    </Page>
     <Page Include="Views\Clients\NewClientView.g.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
       <DependentUpon>NewClientView.ammy</DependentUpon>
+    </Page>
+    <Page Include="Views\Core\Buttons\ApplyGroup.g.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <DependentUpon>ApplyGroup.ammy</DependentUpon>
     </Page>
     <Page Include="Views\Core\Buttons\CreateButtons.g.xaml">
       <SubType>Designer</SubType>
@@ -276,6 +314,21 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
       <DependentUpon>MainView.ammy</DependentUpon>
+    </Page>
+    <Page Include="Views\PaymentKinds\EditPaymentKindView.g.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <DependentUpon>EditPaymentKindView.ammy</DependentUpon>
+    </Page>
+    <Page Include="Views\PaymentKinds\NewPaymentKindView.g.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <DependentUpon>NewPaymentKindView.ammy</DependentUpon>
+    </Page>
+    <Page Include="Views\PaymentKinds\PaymentKindsView.g.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <DependentUpon>PaymentKindsView.ammy</DependentUpon>
     </Page>
     <Page Include="Views\UserRoles\NewUserRole.xaml">
       <SubType>Designer</SubType>
@@ -343,10 +396,16 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <None Include="Views\Clients\ClientsView.ammy" />
+    <None Include="Views\Clients\ClientView.ammy" />
+    <None Include="Views\Clients\EditClientView.ammy" />
     <None Include="Views\Clients\NewClientView.ammy" />
+    <None Include="Views\Core\Buttons\ApplyGroup.ammy" />
     <None Include="Views\Core\Buttons\CreateButtons.ammy" />
     <None Include="Views\Login\Login.ammy" />
     <None Include="Views\MainView.ammy" />
+    <None Include="Views\PaymentKinds\EditPaymentKindView.ammy" />
+    <None Include="Views\PaymentKinds\NewPaymentKindView.ammy" />
+    <None Include="Views\PaymentKinds\PaymentKindsView.ammy" />
     <None Include="Views\UserRoles\UserRolesManagmentView.ammy" />
   </ItemGroup>
   <ItemGroup>

@@ -1,0 +1,11 @@
+<UserControl x:Class="kp.Views.PaymentKinds.PaymentKindsView" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:ns0="clr-namespace:kp.Resources" xmlns:ns1="clr-namespace:kp.Views.Core.Entities" xmlns:ns2="clr-namespace:AmmySidekick;assembly=AmmySidekick" ns2:Ammy.Register="/kp;component/Views/PaymentKinds/PaymentKindsView.g.xaml">
+  <ns1:EntitiesView>
+    <ns1:EntitiesView.Columns>
+      <DataGridTextColumn Header="{x:Static ns0:Texts.Name}">
+        <DataGridTextColumn.Binding>
+          <Binding Path="Name"/>
+        </DataGridTextColumn.Binding>
+      </DataGridTextColumn>
+    </ns1:EntitiesView.Columns>
+  </ns1:EntitiesView>
+</UserControl>

@@ -1,5 +1,6 @@
 ﻿using kp.ViewModels.Clients;
 using kp.ViewModels.Login;
+using kp.ViewModels.PaymentsKinds;
 using kp.ViewModels.UserRoles;
 using kp.ViewModels.Users;
 using Microsoft.Extensions.DependencyInjection;
@@ -21,6 +22,9 @@ namespace kp.ViewModels
             servoces.AddTransient<ClientsViewModel>();
             servoces.AddTransient<NewClientViewModel>();
             servoces.AddTransient<EditClientViewModel>();
+            servoces.AddTransient<PaymentsKindViewModel>();
+            servoces.AddTransient<NewPaymentKindViewModel>();
+            servoces.AddTransient<EditPaymentKindViewModel>();
         }
     }
 }

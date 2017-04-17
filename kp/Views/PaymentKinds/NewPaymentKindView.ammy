@@ -1,0 +1,18 @@
+﻿using kp.Views.Core.Buttons
+using kp.Resources
+using MaterialDesignThemes.Wpf
+
+UserControl "kp.Views.PaymentKinds.NewPaymentKindView" 
+{
+	Margin: 10
+	StackPanel 
+	{
+		TextBox 
+		{
+			Style: resource "MaterialDesignFloatingHintTextBox"
+			HintAssist.Hint: Texts.Name
+			Text: bind Name
+		}
+		CreateButtons {}
+	}
+}

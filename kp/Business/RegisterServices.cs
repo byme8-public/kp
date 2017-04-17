@@ -26,6 +26,7 @@ namespace kp.Business
             services.AddSingleton(RestService.For<IDataService<User>>(host + "/users", refitSettings));
             services.AddSingleton(RestService.For<IDataService<Role>>(host + "/users/roles", refitSettings));
             services.AddSingleton(RestService.For<IDataService<Client>>(host + "/clients", refitSettings));
+            services.AddSingleton(RestService.For<IDataService<PaymentKind>>(host + "/paymentKinds", refitSettings));
         }
 
         private class HttpHandler : HttpClientHandler
