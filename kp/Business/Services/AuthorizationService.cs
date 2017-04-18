@@ -13,31 +13,10 @@ namespace kp.Business.Services
         public AuthorizationService(ITokenService tokenService)
         {
             this.TokenService = tokenService;
-            this.TryGetTokenFromStorageAsync();
-        }
-
-        private async void TryGetTokenFromStorageAsync()
-        {
-            Guid token = Guid.Empty;
-            try
-            {
-                using (var input = new StreamReader("token"))
-                {
-                    if (!Guid.TryParse(input.ReadLine(), out token))
-                        return;
-                }
-            }
-            catch (Exception)
-            {
-                return;
-            }
-
-            this.Token = await this.TokenService.GetToken(token);
-            this.UserToken = this.Token.Id.ToString();
         }
 
         public User CurrentUser
-            => this.Token.User;
+            => this.Token?.User;
 
         public ITokenService TokenService
         {
@@ -58,13 +37,7 @@ namespace kp.Business.Services
 
         public void Dispose()
         {
-            if (string.IsNullOrWhiteSpace(this.UserToken))
-                return;
 
-            using (var output = new StreamWriter("token"))
-            {
-                output.WriteLine(this.UserToken);
-            }
         }
 
         public async Task SignInAsync(string login, string password)
@@ -75,6 +48,26 @@ namespace kp.Business.Services
                 Password = password
             });
             this.UserToken = this.Token.Id.ToString();
+        }
+
+        public async Task SignInFromStorageAsync()
+        {
+            Guid token = Guid.Empty;
+            try
+            {
+                using (var input = new StreamReader("token"))
+                {
+                    if (!Guid.TryParse(input.ReadLine(), out token))
+                        return;
+                }
+
+                this.Token = await this.TokenService.GetTokenById(token);
+                this.UserToken = this.Token.Id.ToString();
+            }
+            catch (Exception)
+            {
+                return;
+            }
         }
     }
 }

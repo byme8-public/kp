@@ -11,7 +11,7 @@ namespace kp.Business.DataServices
         [Post("")]
         Task<Token> GetToken(TokenRequest request);
 
-        [Get("{token}")]
-        Task<Token> GetToken(Guid token);
+        [Get("/{token}")]
+        Task<Token> GetTokenById(Guid token);
     }
 }

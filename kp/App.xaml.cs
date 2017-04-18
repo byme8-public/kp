@@ -1,5 +1,6 @@
 ﻿using System.Windows;
 using kp.Business;
+using kp.Business.Abstraction;
 using kp.Business.Exceptions;
 using kp.ViewModels;
 using kp.ViewModels.Clients;
@@ -15,6 +16,9 @@ using kp.Views.UserRoles;
 using kp.Views.Users;
 using WpfToolkit.Routing;
 using WpfToolkit.Services;
+using Microsoft.Extensions.DependencyInjection;
+using System.IO;
+using WpfToolkit.Routing.Abstractions;
 
 namespace kp
 {
@@ -52,6 +56,43 @@ namespace kp
             });
 
             this.DispatcherUnhandledException += ExceptionHander.App_DispatcherUnhandledException;
+            this.AuthoriationService = Services.ServiceProvider.GetService<IAuthorizationService>();
+
+        }
+
+        public IAuthorizationService AuthoriationService
+        {
+            get;
+        }
+
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            TryToSingInAsync();
+        }
+
+        private async void TryToSingInAsync()
+        {
+            await this.AuthoriationService.SignInFromStorageAsync();
+            var navigator = Services.ServiceProvider.GetService<INavigator>();
+            if (this.AuthoriationService.CurrentUser is null)
+            {
+                navigator.Navigate(kp.Resources.Routes.Login);
+            }
+            else
+            {
+                navigator.Navigate(kp.Resources.Routes.Main);
+            }
+        }
+
+        protected override void OnExit(ExitEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(this.AuthoriationService.UserToken))
+                return;
+
+            using (var output = new StreamWriter("token"))
+            {
+                output.WriteLine(this.AuthoriationService.UserToken);
+            }
         }
     }
 }

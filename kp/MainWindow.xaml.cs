@@ -1,5 +1,6 @@
 ﻿using System.Globalization;
 using System.Windows.Controls;
+using kp.Business.Abstraction;
 using kp.Views.Core;
 using MaterialDesignThemes.Wpf;
 using Microsoft.Extensions.DependencyInjection;
@@ -25,8 +26,6 @@ namespace kp
             grid.Children.Add(Services.ServiceProvider.GetService<IDialogService>() as DialogService);
             grid.Children.Add(Services.ServiceProvider.GetService<Snackbar>());
             this.Content = grid;
-
-            Services.ServiceProvider.GetService<INavigator>().Navigate(kp.Resources.Routes.Login);
         }
     }
 }
