@@ -185,6 +185,7 @@
     <Compile Include="ViewModels\Core\Abstractions\IEditViewModel.cs" />
     <Compile Include="ViewModels\Core\DialogViewModel.cs" />
     <Compile Include="ViewModels\Core\EditEntityViewModel.cs" />
+    <Compile Include="ViewModels\Core\FilteredEntitiesViewModel.cs" />
     <Compile Include="ViewModels\Core\MenuItemViewModel.cs" />
     <Compile Include="ViewModels\Core\EntitiesViewModel.cs" />
     <Compile Include="ViewModels\Core\NewEntityViewModel.cs" />
@@ -239,6 +240,9 @@
     </Compile>
     <Compile Include="Views\PaymentKinds\PaymentKindsView.ammy.cs">
       <DependentUpon>PaymentKindsView.ammy</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Payments\PaymentsView.ammy.cs">
+      <DependentUpon>PaymentsView.ammy</DependentUpon>
     </Compile>
     <Compile Include="Views\RegisterViews.cs" />
     <Compile Include="Views\UserRoles\NewUserRole.xaml.cs">
@@ -330,6 +334,11 @@
       <Generator>MSBuild:Compile</Generator>
       <DependentUpon>PaymentKindsView.ammy</DependentUpon>
     </Page>
+    <Page Include="Views\Payments\PaymentsView.g.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <DependentUpon>PaymentsView.ammy</DependentUpon>
+    </Page>
     <Page Include="Views\UserRoles\NewUserRole.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -406,6 +415,7 @@
     <None Include="Views\PaymentKinds\EditPaymentKindView.ammy" />
     <None Include="Views\PaymentKinds\NewPaymentKindView.ammy" />
     <None Include="Views\PaymentKinds\PaymentKindsView.ammy" />
+    <None Include="Views\Payments\PaymentsView.ammy" />
     <None Include="Views\UserRoles\UserRolesManagmentView.ammy" />
   </ItemGroup>
   <ItemGroup>
@@ -414,13 +424,13 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\C#\WPFToolkit\WPFToolkit\WPFToolkit.csproj">
-      <Project>{2E68B811-C68D-4E87-A671-A03EE6A980B8}</Project>
-      <Name>WPFToolkit</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\kp.Web\kp.Domain\kp.Domain.csproj">
       <Project>{377c3477-15dd-41cd-ab89-42b5c69b18d5}</Project>
       <Name>kp.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WPFToolkit\WPFToolkit\WPFToolkit.csproj">
+      <Project>{2e68b811-c68d-4e87-a671-a03ee6a980b8}</Project>
+      <Name>WPFToolkit</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

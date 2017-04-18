@@ -79,6 +79,15 @@ namespace kp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Client.
+        /// </summary>
+        public static string Client {
+            get {
+                return ResourceManager.GetString("Client", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Close.
         /// </summary>
         public static string Close {
@@ -183,6 +192,15 @@ namespace kp.Resources {
         public static string Password {
             get {
                 return ResourceManager.GetString("Password", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Payment kind.
+        /// </summary>
+        public static string PaymentKind {
+            get {
+                return ResourceManager.GetString("PaymentKind", resourceCulture);
             }
         }
         

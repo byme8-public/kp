@@ -1,0 +1,33 @@
+﻿using MaterialDesignThemes.Wpf
+using kp.Views.Core.Entities
+using kp.Resources
+using kp.Domain.Data
+
+UserControl "kp.Views.Payments.PaymentsView" 
+{
+	EntitiesView 
+	{
+		Columns: 
+		[
+			DataGridTextColumn
+			{
+				Header: Texts.Client
+				Binding: bind Client
+					convert (Client client) => client.FirstName + " " + client.LastName
+			}
+			DataGridTextColumn
+			{
+				Header: Texts.PaymentKind
+				Binding: bind PaymentKind.Name
+			}
+			MaterialDateDisplay
+			{
+				DisplayDate: bind StartDate
+			}
+			MaterialDateDisplay
+			{
+				DisplayDate: bind EndDate
+			}
+		]
+	}
+}

@@ -123,6 +123,9 @@
   <data name="Cancel" xml:space="preserve">
     <value>Отмена</value>
   </data>
+  <data name="Client" xml:space="preserve">
+    <value>Клиент</value>
+  </data>
   <data name="Close" xml:space="preserve">
     <value>Закрыть</value>
   </data>
@@ -158,6 +161,9 @@
   </data>
   <data name="Password" xml:space="preserve">
     <value>Пароль</value>
+  </data>
+  <data name="PaymentKind" xml:space="preserve">
+    <value>Тип платежа</value>
   </data>
   <data name="ProblemWithConnection" xml:space="preserve">
     <value>Проблемы с интернет соединением</value>

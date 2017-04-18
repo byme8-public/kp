@@ -123,6 +123,9 @@
   <data name="Cancel" xml:space="preserve">
     <value>Cancel</value>
   </data>
+  <data name="Client" xml:space="preserve">
+    <value>Client</value>
+  </data>
   <data name="Close" xml:space="preserve">
     <value>Close</value>
   </data>
@@ -158,6 +161,9 @@
   </data>
   <data name="Password" xml:space="preserve">
     <value>Password</value>
+  </data>
+  <data name="PaymentKind" xml:space="preserve">
+    <value>Payment kind</value>
   </data>
   <data name="ProblemWithConnection" xml:space="preserve">
     <value>Problems with connection take place</value>

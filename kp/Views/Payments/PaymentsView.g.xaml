@@ -1,0 +1,26 @@
+<UserControl x:Class="kp.Views.Payments.PaymentsView" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:ns0="clr-namespace:kp.Resources" xmlns:ns1="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf" xmlns:ns2="clr-namespace:AmmySidekick;assembly=AmmySidekick" xmlns:ns3="clr-namespace:kp.Views.Core.Entities" ns2:Ammy.Register="/kp;component/Views/Payments/PaymentsView.g.xaml">
+  <ns3:EntitiesView>
+    <ns3:EntitiesView.Columns>
+      <DataGridTextColumn Header="{x:Static ns0:Texts.Client}">
+        <DataGridTextColumn.Binding>
+          <Binding Path="Client" Converter="{x:Static ns2:ExpressionConverter.Instance}" ConverterParameter="&lt;expr id=&quot;0&quot;&gt;&lt;lambda isaction=&quot;False&quot;&gt;&lt;binary op=&quot;Sum&quot;&gt;&lt;binary op=&quot;Sum&quot;&gt;&lt;prop name=&quot;FirstName&quot;&gt;&lt;parameter name=&quot;client&quot; type=&quot;kp.Domain.Data.Client&quot; /&gt;&lt;/prop&gt;&lt;prim val=&quot; &quot; isnull=&quot;False&quot;&gt;&lt;typeinfo typename=&quot;System.String&quot; isarray=&quot;False&quot;&gt;&lt;/typeinfo&gt;&lt;/prim&gt;&lt;/binary&gt;&lt;prop name=&quot;LastName&quot;&gt;&lt;parameter name=&quot;client&quot; type=&quot;kp.Domain.Data.Client&quot; /&gt;&lt;/prop&gt;&lt;/binary&gt;&lt;parameter name=&quot;client&quot; type=&quot;kp.Domain.Data.Client&quot; /&gt;&lt;/lambda&gt;&lt;/expr&gt;"/>
+        </DataGridTextColumn.Binding>
+      </DataGridTextColumn>
+      <DataGridTextColumn Header="{x:Static ns0:Texts.PaymentKind}">
+        <DataGridTextColumn.Binding>
+          <Binding Path="PaymentKind.Name"/>
+        </DataGridTextColumn.Binding>
+      </DataGridTextColumn>
+      <ns1:MaterialDateDisplay>
+        <ns1:MaterialDateDisplay.DisplayDate>
+          <Binding Path="StartDate"/>
+        </ns1:MaterialDateDisplay.DisplayDate>
+      </ns1:MaterialDateDisplay>
+      <ns1:MaterialDateDisplay>
+        <ns1:MaterialDateDisplay.DisplayDate>
+          <Binding Path="EndDate"/>
+        </ns1:MaterialDateDisplay.DisplayDate>
+      </ns1:MaterialDateDisplay>
+    </ns3:EntitiesView.Columns>
+  </ns3:EntitiesView>
+</UserControl>
