@@ -142,6 +142,15 @@ namespace kp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Language changed, restart application to apply that change.
+        /// </summary>
+        public static string LanguageChanged {
+            get {
+                return ResourceManager.GetString("LanguageChanged", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Last name.
         /// </summary>
         public static string LastName {

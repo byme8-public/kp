@@ -144,6 +144,9 @@
   <data name="InputLoginAndPassword" xml:space="preserve">
     <value>Введетите логин и пароль</value>
   </data>
+  <data name="LanguageChanged" xml:space="preserve">
+    <value>Язык изменен, перезапустите приложение, чтобы применить изменение</value>
+  </data>
   <data name="LastName" xml:space="preserve">
     <value>Фамилия</value>
   </data>

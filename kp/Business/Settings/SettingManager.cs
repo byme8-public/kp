@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 
 namespace kp.Business.Settings
 {
@@ -33,6 +34,11 @@ namespace kp.Business.Settings
         {
             this.Storage = storage;
             this.Settings = this.Storage.Load<AppSettings>();
+
+            if (this.Settings.SelectedLanguage == null)
+                this.Settings.SelectedLanguage = "ru-ru";
+
+            CultureInfo.CurrentUICulture = new CultureInfo(this.Settings.SelectedLanguage);
         }
 
         public void Save()

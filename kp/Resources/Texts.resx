@@ -144,6 +144,9 @@
   <data name="InputLoginAndPassword" xml:space="preserve">
     <value>Input your login and password</value>
   </data>
+  <data name="LanguageChanged" xml:space="preserve">
+    <value>Language changed, restart application to apply that change</value>
+  </data>
   <data name="LastName" xml:space="preserve">
     <value>Last name</value>
   </data>
