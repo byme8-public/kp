@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using kp.Business.Abstraction;
 using kp.Business.DataServices;
 using kp.Business.Services;
+using kp.Business.Settings;
 using kp.Domain.Data;
 using Microsoft.Extensions.DependencyInjection;
 using Refit;
@@ -20,6 +21,8 @@ namespace kp.Business
             {
                 HttpMessageHandlerFactory = () => new HttpHandler()
             };
+            services.AddSingleton<SettingManager>();
+            services.AddSingleton<Storage.Storage>();
             services.AddSingleton(RestService.For<ITokenService>(host + "/tokens"));
             services.AddSingleton<IAuthorizationService, AuthorizationService>();
             services.AddSingleton(RestService.For<IUserService>(host + "/users", refitSettings));

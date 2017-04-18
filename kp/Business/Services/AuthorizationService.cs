@@ -4,16 +4,16 @@ using System.Threading.Tasks;
 using kp.Business.Abstraction;
 using kp.Business.Data;
 using kp.Business.DataServices;
+using kp.Business.Settings;
 using kp.Domain.Data;
 using kp.Resources;
+using Storage;
 using WpfToolkit.Routing.Abstractions;
 
 namespace kp.Business.Services
 {
     public class AuthorizationService : IAuthorizationService
     {
-        const string TokenFile = "token";
-
         public ITokenService TokenService
         {
             get;
@@ -24,10 +24,16 @@ namespace kp.Business.Services
             get;
         }
 
-        public AuthorizationService(ITokenService tokenService, INavigator navigator)
+        public SettingManager SettingManager
+        {
+            get;
+        }
+
+        public AuthorizationService(ITokenService tokenService, INavigator navigator, SettingManager settingManager)
         {
             this.TokenService = tokenService;
             this.Navigator = navigator;
+            this.SettingManager = settingManager;
         }
 
         public User CurrentUser
@@ -49,19 +55,8 @@ namespace kp.Business.Services
         {
             this.Token = null;
             this.UserToken = null;
-            File.Delete(TokenFile);
+            this.SettingManager.Settings.UserToken = null;
             this.Navigator.Navigate(Routes.Login);
-        }
-
-        public void SaveTokenToStorage()
-        {
-            if (string.IsNullOrWhiteSpace(this.UserToken))
-                return;
-
-            using (var output = new StreamWriter(TokenFile))
-            {
-                output.WriteLine(this.UserToken);
-            }
         }
 
         public async Task SignInAsync(string login, string password)
@@ -75,16 +70,10 @@ namespace kp.Business.Services
 
         public async Task SignInFromStorageAsync()
         {
-            Guid token = Guid.Empty;
             try
-            {
-                using (var input = new StreamReader(TokenFile))
-                {
-                    if (!Guid.TryParse(input.ReadLine(), out token))
-                        return;
-                }
-
-                this.SetToken(await this.TokenService.GetTokenById(token));
+            { 
+                if (this.SettingManager.Settings.UserToken.HasValue)
+                    this.SetToken(await this.TokenService.GetTokenById(this.SettingManager.Settings.UserToken.Value));
             }
             catch (Exception)
             {
@@ -96,6 +85,7 @@ namespace kp.Business.Services
         {
             this.Token = token;
             this.UserToken = this.Token?.Id.ToString();
+            this.SettingManager.Settings.UserToken = this.Token.Id;
         }
     }
 }

@@ -17,7 +17,6 @@ namespace kp.Business.Abstraction
 
         Task SignInAsync(string login, string password);
         Task SignInFromStorageAsync();
-        void SaveTokenToStorage();
         void Logout();
     }
 }

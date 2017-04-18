@@ -35,7 +35,7 @@ namespace kp.ViewModels
             TrySingInAsync(authorizationService, navigator);
         }
 
-        private static async void TrySingInAsync(IAuthorizationService authorizationService, INavigator navigator)
+        private async void TrySingInAsync(IAuthorizationService authorizationService, INavigator navigator)
         {
             await authorizationService.SignInFromStorageAsync();
             if (authorizationService.CurrentUser is null)

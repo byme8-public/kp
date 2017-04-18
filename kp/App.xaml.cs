@@ -20,6 +20,7 @@ using Microsoft.Extensions.DependencyInjection;
 using System.IO;
 using WpfToolkit.Routing.Abstractions;
 using System.Globalization;
+using kp.Business.Settings;
 
 namespace kp
 {
@@ -58,28 +59,18 @@ namespace kp
             });
 
             this.DispatcherUnhandledException += ExceptionHander.App_DispatcherUnhandledException;
-            this.AuthoriationService = Services.ServiceProvider.GetService<IAuthorizationService>();
+            this.Settings = Services.ServiceProvider.GetService<SettingManager>();
 
         }
 
-        public IAuthorizationService AuthoriationService
+        public SettingManager Settings
         {
             get;
         }
 
-        protected override void OnStartup(StartupEventArgs e)
-        {
-            TryToSingInAsync();
-        }
-
-        private async void TryToSingInAsync()
-        {
-            
-        }
-
         protected override void OnExit(ExitEventArgs e)
         {
-            this.AuthoriationService.SaveTokenToStorage();
+            this.Settings.Save();
         }
     }
 }
