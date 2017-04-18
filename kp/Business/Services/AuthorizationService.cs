@@ -1,4 +1,6 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.IO;
+using System.Threading.Tasks;
 using kp.Business.Abstraction;
 using kp.Business.Data;
 using kp.Business.DataServices;
@@ -6,11 +8,32 @@ using kp.Domain.Data;
 
 namespace kp.Business.Services
 {
-    public class AuthorizationService : IAuthorizationService
+    public class AuthorizationService : IAuthorizationService, IDisposable
     {
         public AuthorizationService(ITokenService tokenService)
         {
             this.TokenService = tokenService;
+            this.TryGetTokenFromStorageAsync();
+        }
+
+        private async void TryGetTokenFromStorageAsync()
+        {
+            Guid token = Guid.Empty;
+            try
+            {
+                using (var input = new StreamReader("token"))
+                {
+                    if (!Guid.TryParse(input.ReadLine(), out token))
+                        return;
+                }
+            }
+            catch (Exception)
+            {
+                return;
+            }
+
+            this.Token = await this.TokenService.GetToken(token);
+            this.UserToken = this.Token.Id.ToString();
         }
 
         public User CurrentUser
@@ -31,6 +54,17 @@ namespace kp.Business.Services
         {
             get;
             set;
+        }
+
+        public void Dispose()
+        {
+            if (string.IsNullOrWhiteSpace(this.UserToken))
+                return;
+
+            using (var output = new StreamWriter("token"))
+            {
+                output.WriteLine(this.UserToken);
+            }
         }
 
         public async Task SignInAsync(string login, string password)

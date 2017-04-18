@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 using kp.Business.Data;
 using kp.Domain.Data;
 using Refit;
@@ -9,5 +10,8 @@ namespace kp.Business.DataServices
     {
         [Post("")]
         Task<Token> GetToken(TokenRequest request);
+
+        [Get("{token}")]
+        Task<Token> GetToken(Guid token);
     }
 }
