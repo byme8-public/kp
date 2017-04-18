@@ -193,6 +193,7 @@
     <Compile Include="ViewModels\Core\ViewModel.cs" />
     <Compile Include="ViewModels\Login\LoginViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
+    <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Compile Include="ViewModels\PaymentsKinds\EditPaymentKindViewModel.cs" />
     <Compile Include="ViewModels\PaymentsKinds\NewPaymentKindViewModel.cs" />
     <Compile Include="ViewModels\PaymentsKinds\PaymentsKindViewModel.cs" />
@@ -226,6 +227,7 @@
     <Compile Include="Views\Core\Entities\EntitiesView.xaml.cs">
       <DependentUpon>EntitiesView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Core\MarkupExtensions\Providers.cs" />
     <Compile Include="Views\Login\Login.ammy.cs">
       <DependentUpon>Login.ammy</DependentUpon>
     </Compile>

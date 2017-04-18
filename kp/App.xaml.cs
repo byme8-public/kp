@@ -19,6 +19,7 @@ using WpfToolkit.Services;
 using Microsoft.Extensions.DependencyInjection;
 using System.IO;
 using WpfToolkit.Routing.Abstractions;
+using System.Globalization;
 
 namespace kp
 {
@@ -29,6 +30,7 @@ namespace kp
     {
         public App()
         {
+            CultureInfo.CurrentUICulture = new CultureInfo("ru-ru");
             Routes.Configure(routes =>
             {
                 routes.Add<Login, LoginViewModel>(kp.Resources.Routes.Login);
@@ -72,27 +74,12 @@ namespace kp
 
         private async void TryToSingInAsync()
         {
-            await this.AuthoriationService.SignInFromStorageAsync();
-            var navigator = Services.ServiceProvider.GetService<INavigator>();
-            if (this.AuthoriationService.CurrentUser is null)
-            {
-                navigator.Navigate(kp.Resources.Routes.Login);
-            }
-            else
-            {
-                navigator.Navigate(kp.Resources.Routes.Main);
-            }
+            
         }
 
         protected override void OnExit(ExitEventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(this.AuthoriationService.UserToken))
-                return;
-
-            using (var output = new StreamWriter("token"))
-            {
-                output.WriteLine(this.AuthoriationService.UserToken);
-            }
+            this.AuthoriationService.SaveTokenToStorage();
         }
     }
 }
